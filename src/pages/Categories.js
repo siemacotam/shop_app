@@ -5,27 +5,27 @@ import {NavLink} from 'react-router-dom';
 const data = [
     {
         name:  'tv',
-        img: '../images/1.jpg',
+        img: '../images/tv1.jpg',
         link: '/tv',
     },
     {
         name:  'phones',
-        img: '../images/2.jpg',
+        img: '../images/phone1.jpg',
         link: '/phones',
     },
     {
         name:  'mp3s',
-        img: '../images/3.jpg',
+        img: '../images/mp3 1.jpg',
         link: '/mp3s',
     },
     {
         name:  'cars',
-        img: '../images/4.jpg',
+        img: '../images/car1.jpg',
         link: '/cars',
     },
     {
         name:  'laptops',
-        img: '../images/1.jpg',
+        img: '../images/laptop1.jpg',
         link: '/laptops',
     },
 ]
@@ -41,7 +41,10 @@ const items = data.map(item =>
 </div> )
 
     return ( 
-        items
+        <>
+        <div className="bg"></div>
+        {items}
+        </>
      );
 }
  

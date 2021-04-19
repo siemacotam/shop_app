@@ -4,19 +4,19 @@ import Item from '../components/Item'
 const data = [
     {
         name: 'car1',
-        img: '../images/logo.jpg',
+        img: '../images/car1.jpg',
         txt: 'fajne tanie auto kupujcie ludzie',
         price: 30000,
     },
     {
         name: 'car2',
-        img: '../images/logo.jpg',
+        img: '../images/car2.jpg',
         txt: 'fajne tanie auto kupujcie ludzie',
         price: 3540000,
     },
     {
         name: 'car3',
-        img: '../images/logo.jpg',
+        img: '../images/car3.jpg',
         txt: 'fajne tanie auto kupujcie ludzie',
         price: 340000,
     },
@@ -27,7 +27,10 @@ class Cars extends Component {
 
     render() { 
         return ( 
+            <>
+            <div className="bg"></div>
             <Item data={data}/>
+            </>
          );
     }
 }

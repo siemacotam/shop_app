@@ -11,7 +11,7 @@ const Item = (props) => {
             <img src={item.img} alt="foto"/>
             <p>{item.txt}</p>
             <p>{item.price}</p>
-            <button type="button" class="btn btn-success">Dodaj do koszyka</button>
+            <button type="button" className="btn btn-success">Dodaj do koszyka</button>
 </div> 
     )
 

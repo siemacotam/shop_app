@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Main.css'
+import '../styles/Blog.css'
 
 
 const data = [
@@ -45,7 +45,7 @@ const data = [
     },
 
 ]
-const Main = () => {
+const Blog = () => {
 
     const articles = data.map(article => 
         <div key={article.title} className='article'>
@@ -62,4 +62,4 @@ const Main = () => {
      );
 }
  
-export default Main;
+export default Blog;

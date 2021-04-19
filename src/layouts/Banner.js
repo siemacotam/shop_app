@@ -31,7 +31,7 @@ class Banner extends Component {
     render() { 
         return ( 
             <div className='banner'>
-                <div className='baner'><img src={this.state.pic} alt=""/> siema banner</div>
+                <div className='baner'><img src={this.state.pic} alt=""/></div>
             </div>
          );
     }
