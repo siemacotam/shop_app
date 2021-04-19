@@ -9,24 +9,24 @@ const data = [
         link: '/tv',
     },
     {
-        name:  'radio',
+        name:  'phones',
         img: '../images/2.jpg',
-        link: '/radio',
+        link: '/phones',
     },
     {
-        name:  'plasma',
+        name:  'mp3s',
         img: '../images/3.jpg',
-        link: '/plasma',
+        link: '/mp3s',
     },
     {
-        name:  'eggs',
+        name:  'cars',
         img: '../images/4.jpg',
-        link: '/eggs',
+        link: '/cars',
     },
     {
-        name:  'toys',
+        name:  'laptops',
         img: '../images/1.jpg',
-        link: '/toys',
+        link: '/laptops',
     },
 ]
 

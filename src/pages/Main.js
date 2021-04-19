@@ -6,7 +6,7 @@ const data = [
     {
         title: "artykuł 1",
         author: 'Jan',
-        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit alias veritatis eius. Molestias ullam corrupti suscipit illum, recusandae at. Illo quia vero esse ipsum fugiat temporibus quos deleniti facere nesciunt!'
+        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit alias veritatis eius. Molestias ullam corrupti suscipit illum, recusandae at. Illo quia vero esse ipsum fugiat temporibus quos deleniti facere nesciunt! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate quibusdam illo, voluptate hic eligendi odit ab reiciendis tempore, cumque doloremque, magnam excepturi ut laudantium placeat officiis quod veritatis impedit nisi? '
     },
     {
         title: "artykuł 2",

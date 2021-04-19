@@ -68,6 +68,8 @@ class LoginMenu extends Component {
           })
           const logged= this.props.logged
             logged()
+
+            this.props.click()
         } else {
           this.setState({
             errors: {
@@ -78,7 +80,6 @@ class LoginMenu extends Component {
         }
     
     }
-
 
     render() { 
         return ( 

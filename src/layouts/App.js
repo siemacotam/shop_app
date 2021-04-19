@@ -23,7 +23,7 @@ class App extends Component {
       <Router>
           <div className='App'>
             <header>
-                {<Panel isLoggedIn = {this.state.isLoggedIn}/>}
+                {<Panel isLoggedIn = {this.state.isLoggedIn} logged ={this.logged}/>}
             </header>
             <aside>
                 {<Banner />}
