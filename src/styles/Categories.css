@@ -1,0 +1,41 @@
+.page {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.item {
+    flex-basis: 30%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 30vh;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.item a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+.item img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.item p { 
+    z-index: 2;
+    font-size: 20px;
+    margin: 0 auto;
+}

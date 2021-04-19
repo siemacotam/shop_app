@@ -3,23 +3,33 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Panel from './Panel';
 import Banner from './Banner';
-import ItemList from './ItemList';
 import Footer from './Footer';
+import Page from './Page'
 
 class App extends Component {
-  state = {  }
+  state = { 
+    isLoggedIn: false,
+   }
+
+  logged = () => {
+    this.setState({
+      isLoggedIn: true,
+  })
+}
+
+
   render() { 
     return ( 
       <Router>
           <div className='App'>
             <header>
-                {<Panel />}
+                {<Panel isLoggedIn = {this.state.isLoggedIn}/>}
             </header>
             <aside>
                 {<Banner />}
             </aside>
             <section className="page">
-                {<ItemList/>}
+                {<Page logged ={this.logged} isLoggedIn = {this.state.isLoggedIn}/>}
               </section>
               <footer>{<Footer />}</footer>
           </div>

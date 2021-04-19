@@ -1,0 +1,23 @@
+.shoppingCart {
+    width: 80%;
+    text-align: center;
+}
+
+.shoppingCart h3 {
+    padding: 30px;
+}
+
+.shoppingCart p {
+    padding: 30px;
+}
+
+.shoppingCart button {
+    padding: 30px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.shoppingCart button:hover {
+    background-color: black;
+    color: white;
+}

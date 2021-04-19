@@ -1,0 +1,21 @@
+.articles{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.article {
+   flex-basis: 40%;
+}
+
+
+.article h2, .article h5 {
+    text-align: center;
+    padding: 10px;
+}
+
+.article p {
+    padding: 30px;
+    background-color: grey;
+}
