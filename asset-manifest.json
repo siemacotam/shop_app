@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/siemacotam/shop_app/static/css/main.329e4cc9.chunk.css",
+    "main.js": "/siemacotam/shop_app/static/js/main.5b675662.chunk.js",
+    "main.js.map": "/siemacotam/shop_app/static/js/main.5b675662.chunk.js.map",
+    "runtime-main.js": "/siemacotam/shop_app/static/js/runtime-main.a1db5bd9.js",
+    "runtime-main.js.map": "/siemacotam/shop_app/static/js/runtime-main.a1db5bd9.js.map",
+    "static/js/2.8ff01a54.chunk.js": "/siemacotam/shop_app/static/js/2.8ff01a54.chunk.js",
+    "static/js/2.8ff01a54.chunk.js.map": "/siemacotam/shop_app/static/js/2.8ff01a54.chunk.js.map",
+    "index.html": "/siemacotam/shop_app/index.html",
+    "static/css/main.329e4cc9.chunk.css.map": "/siemacotam/shop_app/static/css/main.329e4cc9.chunk.css.map",
+    "static/js/2.8ff01a54.chunk.js.LICENSE.txt": "/siemacotam/shop_app/static/js/2.8ff01a54.chunk.js.LICENSE.txt",
+    "static/media/Categories.css": "/siemacotam/shop_app/static/media/bg.d9f89e7e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1db5bd9.js",
+    "static/js/2.8ff01a54.chunk.js",
+    "static/css/main.329e4cc9.chunk.css",
+    "static/js/main.5b675662.chunk.js"
+  ]
+}
