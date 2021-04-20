@@ -1,5 +1,17 @@
 footer {
-    height: 4vh;
+    height: 7vh;
     background-color: black;
     color: white;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+@media (max-width: 576px){
+   footer {
+       font-size: 10px;
+   }
 }

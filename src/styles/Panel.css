@@ -64,3 +64,9 @@
     color: white;
     background-color: black;
 }
+
+@media (max-width: 576px){
+    .mainMenu li, .mainMenu a , .mainMenu button {
+        font-size: 10px;
+    }
+  }

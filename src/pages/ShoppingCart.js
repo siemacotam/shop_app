@@ -29,7 +29,7 @@ class ShoppingCart extends Component {
                 <p>podsumowanie</p>
                 <div className="orderList">
                     {order.map(item => 
-                    <div>
+                    <div key={item.name}>
                         <p>{item.name}</p>
                         <p>{item.price}</p>
                     </div>

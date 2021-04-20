@@ -4,7 +4,7 @@ import '../styles/Footer.css'
 const Footer = () => {
     return ( 
         <footer>
-            stopka
+            <span> Strona pokazowa wykonana przez Grzegorza Celek. All rights reserved ! </span>
         </footer>
      );
 }

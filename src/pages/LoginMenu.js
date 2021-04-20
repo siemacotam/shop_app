@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/LoginMenu.css'
 
 class LoginMenu extends Component {
     
@@ -83,21 +84,22 @@ class LoginMenu extends Component {
 
     render() { 
         return ( 
-            <div className='wrap'>
-         <h1>Zaloguj się</h1>
-        <form onSubmit={this.handleSubmit}>
-        <label htmlFor="user"><p>login</p>
-             <input type="text" id='user' name='username' value={this.state.username} onChange={this.handleChange}/>
-             {this.state.errors.username && <span>{this.messages.username_incorrect}</span>}
-        </label>
-        <label htmlFor="password"><p>password</p>
-             <input type="password" id='password' name='password' value={this.state.password} onChange={this.handleChange}/>
-             {this.state.errors.password && <span>{this.messages.password_incorrect}</span>}
-        </label>
-        <button disabled={!this.state.username && !this.state.password}>zaloguj</button>
-    </form>
-    {this.state.logMessage && <h3>{this.state.logMessage}</h3> }
-    </div>
+            <div className='wrapper'>
+                  <h1>Zaloguj się :)</h1>
+                  <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="user">
+                        <input type="text" id='user' name='username' value={this.state.username} placeholder='login' onChange={this.handleChange}/>
+                        {this.state.errors.username && <span>{this.messages.username_incorrect}</span>}
+                    </label>
+                    <label htmlFor="password">
+                        <input type="password" id='password' name='password' placeholder='haslo' value={this.state.password} onChange={this.handleChange}/>
+                        {this.state.errors.password && <span>{this.messages.password_incorrect}</span>}
+                    </label>
+                    <button disabled={!this.state.username && !this.state.password}>zaloguj</button>
+                  </form>
+                  {this.state.logMessage && <h3>{this.state.logMessage}</h3> }
+                  <button type="button" className="btn-close" aria-label="Close" onClick={this.props.click}></button>
+             </div>
          );
     }
 }

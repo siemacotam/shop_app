@@ -1,0 +1,21 @@
+.wrapper {
+    min-height: 10vh;
+    border: 5px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper form label {
+    padding: 0 20px;
+}
+.wrapper form label input {
+    padding: 5px;
+}
+.wrapper button {
+    margin: 0 10px;
+}
+.wrapper form span {
+    color: red;
+    font-size: 10px;
+}

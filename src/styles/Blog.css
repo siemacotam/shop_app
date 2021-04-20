@@ -9,13 +9,32 @@
    flex-basis: 40%;
 }
 
+.article h2 {
+    text-transform: uppercase;
+    font-weight: Bold;
+    text-decoration: underline;
+    padding: 5px;
+}
 
 .article h2, .article h5 {
     text-align: center;
+}
+
+.article h5 {
+    font-size: 12px;
     padding: 10px;
 }
 
 .article p {
     padding: 30px;
     background-color: grey;
+}
+
+@media (max-width: 576px){
+    .article {
+        flex-basis: 80%;
+    }
+    .article h2, .article h5 {
+        padding: 3px;
+    }
 }

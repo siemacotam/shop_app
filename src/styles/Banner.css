@@ -20,3 +20,12 @@
     height: 100%; 
     width: 100%; 
 }
+
+@media (max-width: 576px){
+    .banner{
+        height: 30vh;
+    }
+    .baner {
+        width: 100%;
+    }
+}

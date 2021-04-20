@@ -17,3 +17,11 @@
     width: 100%;
     overflow: hidden;
 }
+
+@media (max-width: 576px){
+   .product {
+       flex-basis: 90%;
+       height: 55vh;
+       font-size: 15px;
+   }
+ }
