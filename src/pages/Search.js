@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
+import {laptops} from '../pages/Laptops';
+import {mp3} from '../pages/Mp3s';
+import {phones} from '../pages/Phones';
+import {tv} from '../pages/Tv';
+import {cars} from '../pages/Cars';
+import Item from '../components/Item'
+import '../styles/Search.css'
+
+let products = laptops.concat( mp3, phones, tv, cars);
+
 
 class Search extends Component {
+
+
     state = { 
         value: '',
         items: []
      }
 
-     handleSubmit = (e) => {
-        e.preventDefault();
-        this.setState({
-            value: "",
-        })
-    }
-
     handleChange = (e) => {
             this.setState({
                 value: e.target.value,
             })
+        }
+
+        prevent = (e) => {
+            e.preventDefault();
         }
 
     handleClick = (e) => {
@@ -27,14 +36,20 @@ class Search extends Component {
     }
 
     render() { 
+        const data = products.filter(item => {return !( item.name.indexOf(this.state.value))})
+        const data2 = products.filter(item => {return ( item.name.indexOf(this.state.value))})
+        
         return ( 
-            <div className="search">
-                <form onSubmit = {this.changeSubmit}>
+            <>
+                <form className='searchForm'>
                     <p>Wyszukaj przedmiotu, który Cię interesuje: </p>
                     <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="produkt..."></input>
-                    <button onClick ={this.handleClick}>znajdź mnie</button>
+                    <button onClick ={this.prevent}>Znajdż mnie</button>
+                    <button onClick ={this.handleClick}>wyczyść wyszukiwanie</button>
                 </form>
-            </div>
+                {this.state.value ? <Item data={data}/> : null}
+                {(this.state.value && products.length === data2.length) ? <p>nie ma podanych produktów</p> : null }
+            </>
          );
     }
 }

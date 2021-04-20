@@ -40,6 +40,8 @@ const data = [
     },
 ]
 
+export const laptops = data
+
 class Laptops extends Component {
     state = {  }
 

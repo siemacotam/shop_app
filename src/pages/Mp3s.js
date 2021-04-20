@@ -40,6 +40,8 @@ const data = [
     },
 ]
 
+export const mp3 = data
+
 class Mp3s extends Component {
     state = {  }
 

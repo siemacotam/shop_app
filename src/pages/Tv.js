@@ -34,6 +34,8 @@ const data = [
     },
 ]
 
+export const tv = data
+
 class Tv extends Component {
     state = {  }
 

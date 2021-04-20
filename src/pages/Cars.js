@@ -21,6 +21,7 @@ const data = [
         price: 340000,
     },
 ]
+export const cars = data
 
 class Cars extends Component {
     state = {  }

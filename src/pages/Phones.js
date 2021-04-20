@@ -33,6 +33,7 @@ const data = [
         price: 231110000,
     },
 ]
+export const phones = data
 
 class Phones extends Component {
     state = {  }
