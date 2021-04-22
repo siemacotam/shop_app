@@ -14,6 +14,7 @@ import {Route} from 'react-router-dom'
 const Page = (props) => {
     return ( 
         <>
+            <div className="bg"></div>
             <Route path='/' exact component={Blog}></Route>
             <Route path='/categories' component={Categories}></Route>
             <Route path='/shoppingcart' render={() => <ShoppingCart isLoggedIn={props.isLoggedIn} />} ></Route>

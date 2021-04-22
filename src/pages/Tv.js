@@ -42,7 +42,6 @@ class Tv extends Component {
     render() { 
         return ( 
             <>
-            <div className="bg"></div>
             <Item data={data}/>
             </>
          );

@@ -7,9 +7,9 @@ class UserAccount extends Component {
         return ( 
             <div className='userPanel'>
                 <h1>Witaj użytkowniku</h1>
-                <p>twoje zakupy</p>
                 <p>dane użytkownika</p>
                 <p>ustawienia konta</p>
+                <p>twoje zakupy</p>
             </div>
          );
     }

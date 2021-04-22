@@ -26,10 +26,10 @@ export const cars = data
 class Cars extends Component {
     state = {  }
 
+
     render() { 
         return ( 
             <>
-            <div className="bg"></div>
             <Item data={data}/>
             </>
          );

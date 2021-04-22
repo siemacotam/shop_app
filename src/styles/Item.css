@@ -9,6 +9,8 @@
 
 .product h3 {
     text-align: center;
+    text-transform: uppercase;
+    background-color: rgba(0,0,0,0.2);
 }
 
 .product img {

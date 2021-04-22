@@ -35,13 +35,13 @@ const data = [
 ]
 export const phones = data
 
+
 class Phones extends Component {
     state = {  }
 
     render() { 
         return ( 
             <>
-            <div className="bg"></div>
             <Item data={data}/>
             </>
          );

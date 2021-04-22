@@ -46,9 +46,10 @@ class Search extends Component {
                     <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="produkt..."></input>
                     <button onClick ={this.prevent}>Znajdż mnie</button>
                     <button onClick ={this.handleClick}>wyczyść wyszukiwanie</button>
+                    {(this.state.value && products.length === data2.length) ? <p>nie znaleziono wyszukiwanych produktów</p> : null }
                 </form>
                 {this.state.value ? <Item data={data}/> : null}
-                {(this.state.value && products.length === data2.length) ? <p>nie ma podanych produktów</p> : null }
+               
             </>
          );
     }

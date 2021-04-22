@@ -2,3 +2,8 @@
     width: 100%;
     text-align: center;
 }
+
+.searchForm p {
+    margin-top: 30px;
+    font-weight: bold;
+}

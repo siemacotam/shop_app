@@ -12,7 +12,7 @@
 }
 
 .shoppingCart button {
-    padding: 30px;
+    padding: 20px;
     background-color: white;
     cursor: pointer;
 }
@@ -22,19 +22,32 @@
     color: white;
 }
 
-.shoppingCart .orderList {
-    display: flex;
-    flex-direction: column;
-}
-.shoppingCart .orderList div {
-    display: flex;
-    flex-direction: row;
-    background-color: grey;
-    margin-bottom: 10px;
-}
 
 .shoppingCart span {
     color: green;
     font-weight: bold;
     font-size: 20px;
+}
+
+.shoppingCart ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.shoppingCart ul li {
+    display: flex;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: red;
+
+}
+
+.shoppingCart ul li img{
+    height: 80px;
+    width: 80px;
+}
+
+.shoppingCart ul li p {
+ font-weight: bold;
+ font-size: 15px;
 }
