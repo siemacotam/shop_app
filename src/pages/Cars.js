@@ -7,18 +7,21 @@ const data = [
         img: '../images/car1.jpg',
         txt: 'fajne tanie auto kupujcie ludzie',
         price: 30000,
+        amount: '1',
     },
     {
         name: 'car2',
         img: '../images/car2.jpg',
         txt: 'fajne tanie auto kupujcie ludzie',
         price: 3540000,
+        amount: '1',
     },
     {
         name: 'car3',
         img: '../images/car3.jpg',
         txt: 'fajne tanie auto kupujcie ludzie',
         price: 340000,
+        amount: '1',
     },
 ]
 export const cars = data

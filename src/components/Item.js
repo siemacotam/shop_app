@@ -4,16 +4,31 @@ import { orders } from '../pages/ShoppingCart'
 import Swal from 'sweetalert2'
 
 class Item extends Component {
-    state = { }
+    state = { 
+        number: '1',
+    }
 
     data = this.props.data
+    
 
     items = this.data.map(item => 
         <div key={item.name} className='product'> 
             <h3>{item.name}</h3>
             <img src={item.img} alt="foto"/>
             <p>{item.txt}</p>
-            <p>cena : {item.price}</p>
+            <label> Ilość:
+                <select onChange={(e) => {
+                            this.setState({ number: e.target.value})
+                            item.amount = e.target.value
+                            }}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </label>
+            <p>cena : {item.price * item.amount}</p>
             <button id={item.name} type="button" className="btn btn-success" 
             onClick={ 
             (e) =>{ 
@@ -25,18 +40,15 @@ class Item extends Component {
                 if(itemId[i] === buttonId){
                     Swal.fire('Produkt znajduje się już w koszyku')
                     return
-                } else {
-                    console.log('siema')
-                }
+                } 
             }
             Swal.fire('Dodano produkt do koszyka')
             orders.push(item)
-
+            item.amount = this.state.number
             }}>Dodaj do koszyka</button>
         </div> )
 
     render() { 
-
         return ( 
             this.items
          );

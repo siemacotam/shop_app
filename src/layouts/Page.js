@@ -1,6 +1,6 @@
 import React from 'react';
 import Categories from '../pages/Categories'
-import Blog from '../pages/Main'
+import Blog from '../pages/Blog'
 import ShoppingCart from '../pages/ShoppingCart.js'
 import UserAccount from '../pages/UserAccount.js'
 import Tv from '../pages/Tv'

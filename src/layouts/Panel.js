@@ -7,12 +7,20 @@ import {orders} from '../pages/ShoppingCart'
 class Panel extends Component{
     state = {
         isClicked: false,
+        orders: 0,
     }
 
     handleClick = () => {
         this.setState({
             isClicked: !this.state.isClicked
         })
+    }
+
+    componentDidMount(){
+        setInterval(() => {
+            this.setState({
+            orders: orders.length
+        }) },1)
     }
 
     render (){ 

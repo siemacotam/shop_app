@@ -35,10 +35,11 @@
 }
 
 .shoppingCart ul li {
+    justify-content: space-between;
     display: flex;
     padding: 15px;
     margin-bottom: 10px;
-    background-color: red;
+    background-color: rgba(100,100,100,0.6);
 
 }
 
