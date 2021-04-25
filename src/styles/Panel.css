@@ -31,6 +31,12 @@
     flex-basis: 25%;
     text-align: center;
     list-style: none;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.mainMenu ul li a:hover {
+    transform: scale(1.5);
 }
 
 .mainMenu a {

@@ -95,8 +95,8 @@ class Contact extends Component {
         <>
             <form onSubmit={this.handleSubmit} className='contactForm' noValidate>
                 <h3>Napisz do nas !</h3>
-                <label htmlFor="user"> Imię : <br/>
-                    <input id='user' name='username' type="text" value={this.state.username} placeholder='Twoje Imię' onChange={this.handleChange}/>
+                <label htmlFor="username"> Imię : <br/>
+                    <input id='username' name='username' type="text" value={this.state.username} placeholder='Twoje Imię' onChange={this.handleChange}/>
                     {this.state.errors.username && <span>{this.messages.username_incorrect}</span>}
                 </label>
                 <label htmlFor="email"> Twój adres email: <br/>
