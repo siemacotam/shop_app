@@ -1,22 +1,23 @@
-.wrap{
-    display: flex;
-}
 .mainMenu {
     margin: 0 auto;
     display: flex;
     width: 100%;
 }
 
-.logo {
+.mainMenu__logo {
     height: 10vh;
     padding: 5px 15px;
 }
 
-.logo img {
+.mainMenu__wrap{
+    display: flex;
+}
+
+.mainMenu__logo img {
     height: 100%;
 }
 
-.mainMenu .logo a {
+.mainMenu__logo a {
     padding: 0;
 }
 
@@ -60,7 +61,7 @@
     border-right: 20px solid blue;
 }
 
-.wrap .button {
+.mainMenu__wrap .button {
     display: flex;
     justify-content: center;
     align-items: center;

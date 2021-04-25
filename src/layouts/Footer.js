@@ -4,7 +4,7 @@ import '../styles/Footer.css'
 const Footer = () => {
     return ( 
         <footer>
-            <span> Strona pokazowa wykonana przez Grzegorza Celek. All rights reserved ! </span>
+            <p className='footer__text'> Strona pokazowa wykonana przez Grzegorza Celek. All rights reserved ! </p>
         </footer>
      );
 }

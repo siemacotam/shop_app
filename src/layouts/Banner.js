@@ -24,14 +24,16 @@ class Banner extends Component {
                 this.index = -1
             }
             this.index ++
-         },5000)
+         },4000)
          
         }
 
     render() { 
         return ( 
             <div className='banner'>
-                <div className='baner'><img src={this.state.pic} alt=""/></div>
+                <div className='banner__wrap bannerDiv'>
+                    <img className='banner__img' src={this.state.pic} alt=""/>
+                </div>
             </div>
          );
     }

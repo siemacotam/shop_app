@@ -11,11 +11,12 @@ import Cars from '../pages/Cars'
 import Search from '../pages/Search'
 import {Route} from 'react-router-dom'
 import Contact from '../pages/Contact'
+import '../styles/Page.css'
 
 const Page = (props) => {
     return ( 
         <>
-            <div className="bg"></div>
+            <div className="page__bg"></div>
             <Route path='/' exact component={Blog}></Route>
             <Route path='/categories' exact component={Categories}></Route>
             <Route path='/shoppingcart' render={() => <ShoppingCart isLoggedIn={props.isLoggedIn} />} ></Route>

@@ -28,8 +28,8 @@ class Panel extends Component{
         return (
         <>
             <nav className='mainMenu'>
-            <div className="logo"><NavLink to ={'/'} exact ><img src="./images/logo.jpg" alt="logo"/></NavLink></div>
-                <ul className='wrap'>
+                <div className="mainMenu__logo"><NavLink to ={'/'} exact ><img src="./images/logo.jpg" alt="logo"/></NavLink></div>
+                <ul className='mainMenu__wrap'>
                         <li className=''><NavLink to ={'/categories'} exact >oferta</NavLink></li>
                         <li className=''><NavLink to ={'/search'} exact ><i className="fas fa-search"></i></NavLink></li>
                         <li className=''><NavLink to ={'/shoppingcart'} exact ><i className="fas fa-shopping-cart"> ({orders.length})</i></NavLink></li>

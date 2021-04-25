@@ -1,0 +1,22 @@
+.page {
+    min-height: 90vh;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 0;
+    position: relative;
+}
+
+.page__bg{
+    background-image: url('../images/bg.jpg');
+    opacity:0.1;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}

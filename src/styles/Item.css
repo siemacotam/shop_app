@@ -3,22 +3,38 @@
     flex-basis: 30%;
     flex-direction: column;
     padding: 20px;
-    padding-top: 40px;
     height: 45vh;
     position: relative;
+    background-color:rgba(0,0,0,0.05);
+    transition: .5s;
+    text-align: center;
+    margin: 10px;
+}
+.product:hover{
+    background-color:rgba(0,0,0,0.3);
 }
 
-.product h3 {
-    text-align: center;
+.product__name {
     text-transform: uppercase;
     background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    letter-spacing: 2px;
 }
 
-.product img {
+.product__img {
     object-fit: cover;
     height: 100%;
     width: 100%;
     overflow: hidden;
+    transition: .5s;
+}
+
+.product__description {
+    padding: 10px;
+}
+
+.product__price {
+    font-weight: bold;
 }
 
 @media (max-width: 576px){
