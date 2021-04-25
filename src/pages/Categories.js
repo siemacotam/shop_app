@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom';
 const data = [
     {
         name:  'tv',
-        img: '../images/tv1.jpg',
+        img: '../images/tv2.jpg',
         link: '/tv',
     },
     {
@@ -35,8 +35,8 @@ const Categories = () => {
 const items = data.map(item => 
 <div key={item.name} className='item'> 
     <NavLink to ={`/categories${item.link}`} >
-    <p>{item.name}</p>
-    <img src={item.img} alt="foto"/>
+    <p className='item__name'>{item.name}</p>
+    <img className='item__img' src={item.img} alt="foto"/>
     </NavLink>
 </div> )
 

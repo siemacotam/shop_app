@@ -1,23 +1,42 @@
-.wrapper {
+.loginMenu {
+    position: fixed;
+    top: 8vh;
+    left: 5%;
+    right: 5%;
+    background-color: rgba(255,255,255,0.9);
+    z-index: 3;
     min-height: 10vh;
-    border: 5px solid blue;
+    border: 3px solid black;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
-.wrapper form label {
-    padding: 0 20px;
+.loginMenu__h1 {
+    min-width: 20%;
+    padding: 15px;
+    font-weight: bold;
 }
-.wrapper form label input {
-    padding: 5px;
+
+.loginMenu__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.wrapper button {
-    margin: 0 10px;
+
+.loginMenu__input {
+    margin: 10px;
 }
-.wrapper form span {
+
+.loginMenu span {
     color: red;
     font-size: 10px;
+    display: block;
+    max-width: 60%;
+}
+
+.loginMenu__btn {
+    margin: 20px;
 }
 
 @media (max-width: 576px){

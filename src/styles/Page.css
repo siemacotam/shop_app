@@ -19,4 +19,19 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
+    background-attachment: fixed;
+}
+
+.page .backButton a {
+    position: absolute;
+    right: 5%;
+    top: 1%;
+    z-index: 1;
+    text-decoration: none; 
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgba(0,0,0,0.8);
 }

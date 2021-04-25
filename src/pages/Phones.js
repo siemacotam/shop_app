@@ -38,6 +38,34 @@ const data = [
         price: 231110000,
         amount: '1',
     },
+    {
+        name: 'phone 6',
+        img: '../images/phone3.jpg',
+        txt: 'fajne tanie auto kupujcie ludzie',
+        price: 3540000,
+        amount: '1',
+    },
+    {
+        name: 'phone 7',
+        img: '../images/phone1.jpg',
+        txt: 'fajne tanie auto kupujcie ludzie',
+        price: 340000,
+        amount: '1',
+    },
+    {
+        name: 'phone 8',
+        img: '../images/phone2.jpg',
+        txt: 'fajne tanie auto kupujcie ludzie',
+        price: 230000,
+        amount: '1',
+    },
+    {
+        name: 'phone 9',
+        img: '../images/phone3.jpg',
+        txt: 'fajne tanie auto kupujcie ludzie',
+        price: 231110000,
+        amount: '1',
+    },
 ]
 export const phones = data
 

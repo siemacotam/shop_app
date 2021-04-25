@@ -1,50 +1,54 @@
 .mainMenu {
-    margin: 0 auto;
     display: flex;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 2;
+    flex-wrap: wrap;
+    border-bottom: 1px solid black;
 }
 
 .mainMenu__logo {
-    height: 10vh;
-    padding: 5px 15px;
+    height: 8vh;
+    flex-basis: 15%;
 }
 
-.mainMenu__wrap{
-    display: flex;
+.mainMenu .mainMenu__logo a.active {
+    background-color: #fff;
 }
 
 .mainMenu__logo img {
     height: 100%;
 }
 
-.mainMenu__logo a {
-    padding: 0;
-}
-
-.mainMenu ul {
+.mainMenu__wrap{
     flex-grow: 1;
     display: flex;
     padding-left: 0px;
     margin: 0;
 }
 
-.mainMenu ul li {
-    flex-basis: 25%;
+.mainMenu__element {
+    flex-basis: 20%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     transition: .5s;
     overflow: hidden;
 }
 
-.mainMenu ul li a:hover {
-    transform: scale(1.5);
+.mainMenu__element a:hover {
+    transform: scale(1.25);
 }
 
 .mainMenu a {
     color: black;
     text-decoration: none;
     display: block;
-    padding: 15px 0px;
     height: 100%;
     width: 100%;
     transition: .5s;
@@ -53,18 +57,6 @@
     align-items: center;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.logo2 a {
-    padding: 0;
-    background-color: white;
-    border-right: 20px solid blue;
-}
-
-.mainMenu__wrap .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .mainMenu .active {

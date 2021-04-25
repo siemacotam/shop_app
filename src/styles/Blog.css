@@ -9,26 +9,38 @@
    flex-basis: 40%;
 }
 
-.article h2 {
+.article__title {
     text-transform: uppercase;
     font-weight: Bold;
-    text-decoration: underline;
     padding: 5px;
+    letter-spacing: 2px;
+    background-color: rgba(0,0,0,0.15);
+    border-radius: 5px;
+    border: 0px solid black;
+}
+
+.article__wrap {
+    background-color: grey;
+}
+
+.article__img {
+    width: 50%;
+    float: left;
+    margin: 20px;
 }
 
 .article h2, .article h5 {
     text-align: center;
 }
 
-.article h5 {
+.article__text {
+    padding: 30px;
+}
+.article__author {
     font-size: 12px;
     padding: 10px;
 }
 
-.article p {
-    padding: 30px;
-    background-color: grey;
-}
 
 @media (max-width: 576px){
     .article {

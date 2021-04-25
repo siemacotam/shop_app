@@ -15,8 +15,8 @@ class LoginMenu extends Component {
      }
 
      messages = {
-        username_incorrect: 'Login nieprawidłowy. Sprawdź poprawność i pamiętaj, że nazwa musi mieć minimum 10 znaków i nie może zawierać przerwy.',
-        password_incorrect: 'Hasło nieprawidłowe.Sprawdź poprawność i pamiętaj że hasło musi posiadać min 6 znaków i nie może zawierać przerwy',
+        username_incorrect: 'Login nieprawidłowy. Nazwa musi mieć minimum 10 znaków i nie może zawierać przerwy.',
+        password_incorrect: 'Hasło nieprawidłowe.Hasło musi posiadać min 6 znaków i nie może zawierać przerwy',
       }
 
     
@@ -83,21 +83,21 @@ class LoginMenu extends Component {
 
     render() { 
         return ( 
-            <div className='wrapper'>
-                  <h1>Zaloguj się :)</h1>
-                  <form onSubmit={this.handleSubmit}>
+            <div className='loginMenu'>
+                  <h1 className='loginMenu__h1'>Zaloguj się</h1>
+                  <form className='loginMenu__form' onSubmit={this.handleSubmit}>
                     <label htmlFor="user">
-                        <input type="text" id='user' name='username' value={this.state.username} placeholder='login' onChange={this.handleChange}/>
+                        <input className='loginMenu__input' type="text" id='user' name='username' value={this.state.username} placeholder='login' onChange={this.handleChange}/><br/>
                         {this.state.errors.username && <span>{this.messages.username_incorrect}</span>}
                     </label>
                     <label htmlFor="password">
-                        <input type="password" id='password' name='password' placeholder='haslo' value={this.state.password} onChange={this.handleChange}/>
+                        <input className='loginMenu__input' type="password" id='password' name='password' placeholder='haslo' value={this.state.password} onChange={this.handleChange}/><br/>
                         {this.state.errors.password && <span>{this.messages.password_incorrect}</span>}
                     </label>
-                    <button disabled={!this.state.username && !this.state.password}>zaloguj</button>
+                    <button className="btn btn-success loginMenu__btn" disabled={!this.state.username && !this.state.password}>zaloguj</button>
                   </form>
                   {this.state.logMessage && <h3>{this.state.logMessage}</h3> }
-                  <button type="button" className="btn-close" aria-label="Close" onClick={this.props.click}></button>
+                  <button type="button" className="btn-close loginMenu__btn" aria-label="Close" onClick={this.props.click}></button>
              </div>
          );
     }
