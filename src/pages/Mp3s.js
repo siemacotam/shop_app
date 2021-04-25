@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Item from '../components/Item'
+import Item from '../components/Item';
+import { Link } from 'react-router-dom';
 
 const data = [
     {
@@ -54,6 +55,7 @@ class Mp3s extends Component {
     render() { 
         return ( 
             <>
+            <div className="backButton"><Link to="/categories">Powrót do listy produktów</Link></div>
             <Item data={data}/>
             </>
          );

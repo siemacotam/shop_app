@@ -54,7 +54,6 @@ class LoginMenu extends Component {
         e.preventDefault()
     
         const validation = this.formValidation()
-        console.log(validation)
     
         if(validation.correct){
           this.setState({

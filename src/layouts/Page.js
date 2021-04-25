@@ -10,21 +10,24 @@ import Laptops from '../pages/Laptops'
 import Cars from '../pages/Cars'
 import Search from '../pages/Search'
 import {Route} from 'react-router-dom'
+import Contact from '../pages/Contact'
 
 const Page = (props) => {
     return ( 
         <>
             <div className="bg"></div>
             <Route path='/' exact component={Blog}></Route>
-            <Route path='/categories' component={Categories}></Route>
+            <Route path='/categories' exact component={Categories}></Route>
             <Route path='/shoppingcart' render={() => <ShoppingCart isLoggedIn={props.isLoggedIn} />} ></Route>
             {props.isLoggedIn ?  <Route path='/user' component={UserAccount}></Route> : null }
-            <Route path='/tv' exact component={Tv}></Route>
-            <Route path='/cars' exact component={Cars}></Route>
-            <Route path='/laptops' exact component={Laptops}></Route>
-            <Route path='/mp3s' exact component={Mp3s}></Route>
-            <Route path='/phones' exact component={Phones}></Route>
+            {/* <Route path='/categories/:id' component={}  ></Route> */}
+            <Route path='/categories/tv'  component={Tv}></Route>
+            <Route path='/categories/cars'  component={Cars}></Route>
+            <Route path='/categories/laptops'  component={Laptops}></Route>
+            <Route path='/categories/mp3s'  component={Mp3s}></Route>
+            <Route path='/categories/phones'  component={Phones}></Route>
             <Route path='/search' exact component={Search}></Route>
+            <Route path='/contact' exact component={Contact}></Route>
         </>
      );
 }

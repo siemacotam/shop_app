@@ -34,7 +34,7 @@ const Categories = () => {
 
 const items = data.map(item => 
 <div key={item.name} className='item'> 
-    <NavLink to ={item.link} >
+    <NavLink to ={`/categories${item.link}`} >
     <p>{item.name}</p>
     <img src={item.img} alt="foto"/>
     </NavLink>

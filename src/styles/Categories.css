@@ -21,6 +21,15 @@
     z-index: -1;
 }
 
+.page .backButton a {
+    position: absolute;
+    right: 5%;
+    z-index: 1;
+    text-decoration: none; 
+    color: black;
+    text-transform: uppercase;
+}
+
 .item {
     flex-basis: 30%;
     display: flex;

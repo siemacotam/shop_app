@@ -30,9 +30,10 @@ class Panel extends Component{
             <nav className='mainMenu'>
             <div className="logo"><NavLink to ={'/'} exact ><img src="./images/logo.jpg" alt="logo"/></NavLink></div>
                 <ul className='wrap'>
-                        <li className=''><NavLink to ={'/categories'} exact >kategorie</NavLink></li>
+                        <li className=''><NavLink to ={'/categories'} exact >oferta</NavLink></li>
                         <li className=''><NavLink to ={'/search'} exact ><i className="fas fa-search"></i></NavLink></li>
                         <li className=''><NavLink to ={'/shoppingcart'} exact ><i className="fas fa-shopping-cart"> ({orders.length})</i></NavLink></li>
+                        <li className=''><NavLink to ={'/contact'} exact><i className="fas fa-envelope"></i></NavLink> </li>
                         { this.props.isLoggedIn? <li className='log'><NavLink to ={'/user'} exact >moje konto</NavLink></li>  : <li className='button'><button onClick={this.handleClick} type="button" className="btn btn-primary">zaloguj</button></li>}
                 </ul>
             </nav> 
