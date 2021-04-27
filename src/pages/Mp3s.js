@@ -52,6 +52,10 @@ export const mp3 = data
 class Mp3s extends Component {
     state = {  }
 
+    componentDidMount() {
+        window.scrollTo(0,400)
+      }
+
     render() { 
         return ( 
             <>

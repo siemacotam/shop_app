@@ -52,6 +52,10 @@ export const laptops = data
 class Laptops extends Component {
     state = {  }
 
+    componentDidMount() {
+        window.scrollTo(0, 400)
+      }
+
     render() { 
         return ( 
             <>

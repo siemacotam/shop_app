@@ -30,6 +30,10 @@ export const cars = data
 class Cars extends Component {
     state = {  }
 
+    componentDidMount() {
+        window.scrollTo(0,400)
+      }
+
 
     render() { 
         return ( 

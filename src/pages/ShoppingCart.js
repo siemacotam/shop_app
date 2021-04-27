@@ -43,25 +43,24 @@ class ShoppingCart extends Component {
     render() { 
 
         const orderList = this.state.orderItems.map(item => 
-            <li key={item.name}>
-                <div><img src={item.img} alt=""/></div>
-                <p>{item.name}</p>
-                <p>ilość : {item.amount}</p>
-                <p>{item.price * item.amount}</p>
-                <button id={item.name} onClick ={this.handleClick}>x</button>
+            <li className='orderElement' key={item.name}>
+                <div className='orderElement__imgWrap' ><img className='orderElement__img' src={item.img} alt=""/></div>
+                <p className='orderElement__name orderElement__text' >{item.name}</p>
+                <p className='orderElement__number orderElement__text' >ilość : {item.amount}</p>
+                <p className='orderElement__price orderElement__text' >{item.price * item.amount}</p>
+                <button className='orderElement__button btn btn-danger' id={item.name} onClick ={this.handleClick}>x</button>
             </li> )
 
         return ( 
             <div className='shoppingCart'>
-                <h3>Status koszyka</h3>
-                <p>podsumowanie</p>
-                <ul>
+                <h2 className='shoppingCart__title'>Status koszyka</h2>
+                <p className='shoppingCart__text'>Podsumowanie</p>
+                <ul className='shoppingCart__container'>
                     {orderList}
                 </ul>
-                <p>{this.state.count}</p>
-                <p>W sumie <span>{this.state.orderItems.length}</span> przedmiotów. Łączna kwota do zapłaty to <span>
+                <p className='shoppingCart__text'>W sumie <span className='shoppingCart__span'>{this.state.orderItems.length}</span> przedmiotów. Łączna kwota do zapłaty to <span className='shoppingCart__span'>
                     {this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</span></p>
-                <button disabled={this.state.orderItems.length === 0} onClick={ () => {Swal.fire({
+                <button className='shoppingCart__button btn btn-danger' disabled={this.state.orderItems.length === 0} onClick={ () => {Swal.fire({
                         title: 'Jesteś pewny że chcesz wyczyścić koszyk ?',
                         showCancelButton: true,
                         confirmButtonText: `Wyczyść`,
@@ -73,7 +72,7 @@ class ShoppingCart extends Component {
                         }
                       })} 
                     }>Wyczyść koszyk</button>
-                <button disabled={!this.state.isLoggedIn}>{this.state.isLoggedIn ? 'przejdź do zamówienia' : 'zaloguj sie zaby kontynuować'}</button>
+                <button className='shoppingCart__button btn btn-success' disabled={!this.state.isLoggedIn}>{this.state.isLoggedIn ? 'przejdź do zamówienia' : 'zaloguj sie zaby kontynuować'}</button>
             </div>
          );
     }

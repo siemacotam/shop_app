@@ -33,7 +33,7 @@ class Panel extends Component{
                 </div>
                 <ul className='mainMenu__wrap menuList'>
                         <li className='mainMenu__element'>
-                            <NavLink to ={'/categories'} exact >oferta</NavLink>
+                            <NavLink to ={'/categories'} exact >sklep</NavLink>
                         </li>
                         <li className='mainMenu__element'>
                             <NavLink to ={'/search'} exact >

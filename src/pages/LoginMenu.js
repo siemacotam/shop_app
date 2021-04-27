@@ -87,11 +87,11 @@ class LoginMenu extends Component {
                   <h1 className='loginMenu__h1'>Zaloguj się</h1>
                   <form className='loginMenu__form' onSubmit={this.handleSubmit}>
                     <label htmlFor="user">
-                        <input className='loginMenu__input' type="text" id='user' name='username' value={this.state.username} placeholder='login' onChange={this.handleChange}/><br/>
+                        <input className='loginMenu__input input' type="text" id='user' name='username' value={this.state.username} placeholder='login' onChange={this.handleChange}/><br/>
                         {this.state.errors.username && <span>{this.messages.username_incorrect}</span>}
                     </label>
                     <label htmlFor="password">
-                        <input className='loginMenu__input' type="password" id='password' name='password' placeholder='haslo' value={this.state.password} onChange={this.handleChange}/><br/>
+                        <input className='loginMenu__input input' type="password" id='password' name='password' placeholder='haslo' value={this.state.password} onChange={this.handleChange}/><br/>
                         {this.state.errors.password && <span>{this.messages.password_incorrect}</span>}
                     </label>
                     <button className="btn btn-success loginMenu__btn" disabled={!this.state.username && !this.state.password}>zaloguj</button>

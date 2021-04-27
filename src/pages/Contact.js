@@ -30,10 +30,21 @@ class Contact extends Component {
         this.setState({
             [name]: value
         })
+
+        if(value.length > 0 ){
+            this.setState({
+                isEmpty: false
+            })
+        } else {
+            this.setState({
+                isEmpty: true
+            })
+        }
+
      }
 
      handleSubmit = (e) => {
-        e.preventDefault()
+         e.preventDefault()
 
         const validation= this.formValidation()
 
@@ -43,6 +54,7 @@ class Contact extends Component {
                 email:'',
                 note:'',
                 message: 'Wiadomość została wysłana',
+                isEmpty: true,
 
                 errors: {
                 username: false,
@@ -93,24 +105,24 @@ class Contact extends Component {
     render() { 
         return ( 
         <>
-            <form onSubmit={this.handleSubmit} className='contactForm' noValidate>
-                <h3>Napisz do nas !</h3>
-                <label htmlFor="username"> Imię : <br/>
-                    <input id='username' name='username' type="text" value={this.state.username} placeholder='Twoje Imię' onChange={this.handleChange}/>
-                    {this.state.errors.username && <span>{this.messages.username_incorrect}</span>}
+            <form className="contactForm" onSubmit={this.handleSubmit} noValidate>
+                <h3 className='contactForm__title'>Napisz do nas !</h3>
+                <label className='contactForm__label' htmlFor="username"> Imię : <br/>
+                    <input className='contactForm__input input' id='username' name='username' type="text" value={this.state.username} placeholder='Twoje Imię' onChange={this.handleChange}/><br/>
+                    {this.state.errors.username && <span className='contactForm__validation'>{this.messages.username_incorrect}</span>}
                 </label>
-                <label htmlFor="email"> Twój adres email: <br/>
-                    <input id='email' name ='email' type="email" value={this.state.email}
+                <label className='contactForm__label' htmlFor="email"> Twój adres email: <br/>
+                    <input className='contactForm__input input' id='email' name ='email' type="email" value={this.state.email}
                      onChange={this.handleChange} 
-                     placeholder='Twój adres email'/>
-                     {this.state.errors.email && <span>{this.messages.email_incorrect}</span>}
+                     placeholder='Twój adres email'/> <br/>
+                     {this.state.errors.email && <span className='contactForm__validation'>{this.messages.email_incorrect}</span>}
                 </label>
-                <textarea id='note' name='note' cols="30" rows="10" value={this.state.note} 
+                <textarea className="contactForm__text textarea" id='note' name='note' cols="30" rows="10" value={this.state.note} 
                 onChange={this.handleChange} 
                 placeholder='Wpisz wiadomość...'></textarea>
-                 {this.state.errors.note && <span>{this.messages.note_incorrect}</span>}
-                <button>Wyślij</button>
-                {this.state.message && <h1>{this.state.message}</h1>}
+                 {this.state.errors.note && <span className='contactForm__validation' >{this.messages.note_incorrect}</span>}
+                <button class="contactForm__button btn btn-success">Wyślij</button>
+                {this.state.message && <span className='contactForm__validation contactForm__validation--sent'>{this.state.message}</span>}
             </form>
             <Prompt
             when={!this.state.isEmpty}

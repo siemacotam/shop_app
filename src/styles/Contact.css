@@ -1,4 +1,40 @@
 .contactForm {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+
+.contactForm__title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contactForm__label {
+    font-weight: bold;
+}
+
+.contactForm__input {
+    margin: 10px 0;
+}
+
+.contactForm__validation {
+    color: red;
+    font-size: 12px;
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.contactForm__validation--sent {
+    color: green;
+    font-size: 30px;
+}
+
+.contactForm__text {
+    margin: 15px;
+}
+
+.contactForm__button {
+    margin: 10px;
 }

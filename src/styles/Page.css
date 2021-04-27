@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 50px 0;
+    padding: 20px 0;
     position: relative;
 }
 
@@ -22,16 +22,18 @@
     background-attachment: fixed;
 }
 
-.page .backButton a {
-    position: absolute;
-    right: 5%;
-    top: 1%;
-    z-index: 1;
+.backButton {
+    width: 100%;
+    padding: 20px;
+    text-align: right;
+}
+
+.backButton a {
     text-decoration: none; 
     color: white;
     text-transform: uppercase;
     border: 1px solid black;
     border-radius: 5px;
-    padding: 5px;
-    background-color: rgba(0,0,0,0.8);
+    padding: 8px;
+    background-color: rgba(14, 13, 13, 0.8);
 }

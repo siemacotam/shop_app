@@ -52,6 +52,10 @@ export const tv = data
 class Tv extends Component {
     state = {  }
 
+    componentDidMount() {
+        window.scrollTo(0, 400)
+      }
+
     render() { 
         return ( 
             <>

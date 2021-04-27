@@ -16,3 +16,11 @@ body {
   margin: 0 auto;
   width: 90vw;
 }
+
+.input{
+  padding: 5px;
+}
+
+.textarea {
+  padding: 5px;
+}

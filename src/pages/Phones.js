@@ -73,6 +73,10 @@ export const phones = data
 class Phones extends Component {
     state = {  }
 
+    componentDidMount() {
+        window.scrollTo(0, 400)
+      }
+
     render() { 
         return ( 
             <>
