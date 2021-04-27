@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import '../styles/Banner.css'
 
 const data = [
-    '../images/1.jpg',
-    '../images/2.jpg',
-    '../images/3.jpg',
-    '../images/4.jpg'
+    './images/1.jpg',
+    './images/2.jpg',
+    './images/3.jpg',
+    './images/4.jpg'
 ]
 
 class Banner extends Component {
