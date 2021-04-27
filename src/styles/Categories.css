@@ -1,5 +1,5 @@
 .item {
-    flex-basis: 45%;
+    flex-basis: 40%;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;

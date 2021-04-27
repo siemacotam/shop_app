@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/ShoppingCart.css'
 import '../styles/ShoppingCart.css'
 import Swal from 'sweetalert2'
+import {Link} from 'react-router-dom'
 
 export let orders = []
 
@@ -30,14 +31,14 @@ class ShoppingCart extends Component {
         Swal.fire('Usunieto produkt z koszyka')
      }
 
-    //  orderList = this.state.orderItems.map(item => 
-    //     <li key={item.name}>
-    //         <div><img src={item.img} alt=""/></div>
-    //         <p>{item.name}</p>
-    //         <p>ilość : {item.amount}</p>
-    //         <p>{item.price * item.amount}</p>
-    //         <button id={item.name} onClick ={this.handleClick}>x</button>
-    //     </li> )
+     componentDidMount() {
+        window.scrollTo(0,400)
+        setInterval(() => {
+            this.setState({
+                isLoggedIn: this.props.isLoggedIn,
+        }) },1)
+      }
+
 
 
     render() { 
@@ -72,7 +73,10 @@ class ShoppingCart extends Component {
                         }
                       })} 
                     }>Wyczyść koszyk</button>
-                <button className='shoppingCart__button btn btn-success' disabled={!this.state.isLoggedIn}>{this.state.isLoggedIn ? 'przejdź do zamówienia' : 'zaloguj sie zaby kontynuować'}</button>
+
+                {this.state.isLoggedIn && orders.length > 0? <Link to ={'/user/orders'} exact ><button className='shoppingCart__button btn btn-success'>przejdź do zamówienia </button></Link> : (this.state.isLoggedIn ? <button className='shoppingCart__button btn btn-success' disabled>Dodaj produkty do koszyka</button> :<button className='shoppingCart__button btn btn-success' disabled> zaloguj sie zaby kontynuować</button>) } 
+        
+                
             </div>
          );
     }

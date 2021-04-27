@@ -40,6 +40,8 @@ const items = data.map(item =>
     </NavLink>
 </div> )
 
+    window.scrollTo(0,400)
+
     return ( 
         <>
         <div className="bg"></div>
