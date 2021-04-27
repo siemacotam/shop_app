@@ -25,16 +25,26 @@
     overflow: hidden;
 }
 
+
 .item__name { 
     z-index: 1;
     width: 80%;
     font-size: 30px;
     margin: 10px auto 0 auto;
-    text-transform: uppercase;
-    color: white;
     background-color: rgba(0,0,0,0.7);
     border: 0px solid black;
     border-radius: 5px;
+}
+
+.item__span {
+    display: block;
+    transition: .3s;
+    text-transform: uppercase;
+    color: white;
+}
+
+.item__span:hover {
+    transform: scale(1.2);
 }
 
 

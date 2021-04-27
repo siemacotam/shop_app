@@ -12,10 +12,8 @@ let products = laptops.concat( mp3, phones, tv, cars);
 
 class Search extends Component {
 
-
     state = { 
         value: '',
-        items: []
      }
 
     handleChange = (e) => {
@@ -23,6 +21,7 @@ class Search extends Component {
                 value: e.target.value,
             })
         }
+
 
     prevent = (e) => {
             e.preventDefault();
@@ -36,8 +35,8 @@ class Search extends Component {
     }
 
     render() { 
-        const data = products.filter(item => {return !( item.name.indexOf(this.state.value))})
-        const data2 = products.filter(item => {return ( item.name.indexOf(this.state.value))})
+        const data = products.filter(item => {return !( item.name.indexOf(`${this.state.value}`))})
+        const data2 = products.filter(item => {return ( item.name.indexOf(`${this.state.value}`))})
         
         return ( 
             <>
@@ -45,10 +44,10 @@ class Search extends Component {
                     <p className='searchForm__title' >Wyszukaj przedmiotu, który Cię interesuje: </p>
                     <input className='searchForm__input input'  type="text" value={this.state.value} onChange={this.handleChange} placeholder="produkt..."></input>
                     <button className='searchForm__button btn btn-dark'  onClick ={this.prevent}>Znajdż mnie</button>
-                    <button className='searchForm__button btn btn-dark' onClick ={this.handleClick}>wyczyść wyszukiwanie</button>
+                    <button className='searchForm__button btn btn-dark' onClick ={this.handleClick}>Wyczyść wyszukiwanie</button>
                     {(this.state.value && products.length === data2.length) ? <p className='searchForm__info' >Nie znaleziono wyszukiwanych produktów</p> : null }
                 </form>
-                {this.state.value ? <Item data={data}/> : null}
+                {this.state.value && data.length > 0 ? <Item data={data}/> : null}
                
             </>
          );

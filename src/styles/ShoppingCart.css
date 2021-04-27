@@ -33,6 +33,11 @@
     margin-bottom: 10px;
     background-color: rgba(100,100,100,0.6);
     height: 10vh;
+    transition: .3s;
+}
+
+.orderElement:hover {
+    background-color: rgba(100,100,100,0.9);
 }
 
 .orderElement__imgWrap {
@@ -54,4 +59,9 @@
 
 .shoppingCart__button {
     margin: 10px;
+    transition: .3s;
+}
+
+.shoppingCart__button:hover {
+    transform: scale(1.1);
 }
