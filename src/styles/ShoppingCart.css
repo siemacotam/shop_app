@@ -1,6 +1,24 @@
 .shoppingCart {
-    width: 80%;
+    width: 90%;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+.shoppingCart__orders {
+    background-color: red;
+    flex-basis: 60%;
+    
+}
+
+.shoppingCart__summary{
+    background-color: blue;
+    flex-basis: 30%;
+    min-height: 40%;
+    display: flex;
+    flex-direction: column;
 }
 
 .shoppingCart__title {
@@ -58,10 +76,58 @@
 }
 
 .shoppingCart__button {
-    margin: 10px;
+    margin: 30px;
     transition: .3s;
 }
 
 .shoppingCart__button:hover {
     transform: scale(1.1);
+}
+
+.shoppingCart__values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+.shoppingCart__details {
+    flex-basis: 60%;
+    padding: 10px 0 5px 20px;
+    text-align: left;
+}
+
+.shoppingCart__detailsValue {
+    flex-basis: 25%;
+    padding: 10px 20px 0 0;
+}
+
+.shoppingCart__payment {
+ flex-basis: 80%;
+ background-color: green;
+ min-height: 10vh;
+ display: flex;
+ flex-direction: column;
+}
+
+.shoppingCart__termin {
+flex-basis: 80%;
+min-height: 10vh;
+justify-content: last baseline;
+background-color: brown;
+}
+
+.shoppingCart__flexStart {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width:100%;
+    text-align: left;
+}
+
+.shoppingCart__paymentCards {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin: 0 30px;
 }

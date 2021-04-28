@@ -1,0 +1,24 @@
+.errorPage{
+    margin: 50px auto;
+    text-align: center;
+}
+
+.errorPage__title {
+    font-size: 100px;
+    color: red;
+}
+
+.errorPage__text {
+    font-size: 50px;
+    padding-bottom: 40px;
+}
+
+.errorPage__link {
+    text-decoration: none;
+    color: green;
+    font-size: 30px;
+}
+
+.errorPage__link:hover {
+    color: blue;
+}

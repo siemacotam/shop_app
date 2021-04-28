@@ -13,6 +13,7 @@ import {Route, Switch} from 'react-router-dom'
 import Contact from '../pages/Contact'
 import '../styles/Page.css'
 import ErrorPage from '../pages/ErrorPage'
+import Order from '../pages/Order'
 
 const Page = (props) => {
     return ( 
@@ -31,6 +32,7 @@ const Page = (props) => {
                 <Route path='/categories/phones'  component={Phones}></Route>
                 <Route path='/search' component={Search}></Route>
                 <Route path='/contact' component={Contact}></Route>
+                <Route path='/order' component={Order}></Route>
                 <Route component={ErrorPage}></Route>
             </Switch>
         </>

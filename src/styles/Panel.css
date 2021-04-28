@@ -64,6 +64,35 @@
     background-color: black;
 }
 
+.shopLi {
+    display: flex;
+    flex-direction: column;
+}
+
+.slideMenu {
+    position: absolute;
+    top: 100%;
+    bottom: 50;
+    width: 17%;
+    background-color: grey;
+    padding: 0;
+    transition: .5s;
+} 
+
+.hide{
+    display: none;
+}
+
+.slideMenu__element {
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+
+.slideMenu__link {
+    display: block;
+    padding: 20px;
+}
+
 @media (max-width: 576px){
     .mainMenu li, .mainMenu a , .mainMenu button {
         font-size: 10px;

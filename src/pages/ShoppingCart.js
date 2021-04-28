@@ -5,6 +5,8 @@ import Swal from 'sweetalert2'
 import {Link} from 'react-router-dom'
 
 export let orders = []
+let deliveryPrice = 10
+
 
 class ShoppingCart extends Component {
 
@@ -54,14 +56,13 @@ class ShoppingCart extends Component {
 
         return ( 
             <div className='shoppingCart'>
-                <h2 className='shoppingCart__title'>Status koszyka</h2>
-                <p className='shoppingCart__text'>Podsumowanie</p>
-                <ul className='shoppingCart__container'>
-                    {orderList}
-                </ul>
-                <p className='shoppingCart__text'>W sumie <span className='shoppingCart__span'>{this.state.orderItems.length}</span> przedmiotów. Łączna kwota do zapłaty to <span className='shoppingCart__span'>
-                    {this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</span></p>
-                <button className='shoppingCart__button btn btn-danger' disabled={this.state.orderItems.length === 0} onClick={ () => {Swal.fire({
+                <div className="shoppingCart__orders">
+                    <h2 className='shoppingCart__title'>Status koszyka ({orders.length})</h2>
+                    <p className='shoppingCart__text'>Podsumowanie</p>
+                    <ul className='shoppingCart__container'>
+                        {orderList}
+                    </ul>
+                    <button className='shoppingCart__button btn btn-danger' disabled={this.state.orderItems.length === 0} onClick={ () => {Swal.fire({
                         title: 'Jesteś pewny że chcesz wyczyścić koszyk ?',
                         showCancelButton: true,
                         confirmButtonText: `Wyczyść`,
@@ -73,10 +74,41 @@ class ShoppingCart extends Component {
                         }
                       })} 
                     }>Wyczyść koszyk</button>
+                </div>
+                <div className="shoppingCart__summary">
+                    <h3 className='shoppingCart__title'>Kasa</h3>
+                    <div className='shoppingCart__values'>
+                        <p className='shoppingCart__details' >Wartość produktów</p>
+                        <p className='shoppingCart__detailsValue'> {this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</p>
+                        <p className='shoppingCart__details'>Przesyłka</p>
+                        <p className='shoppingCart__detailsValue'>{orders.length >0 ? deliveryPrice : 0}</p>
+                    </div>
+                    <div className='shoppingCart__values'>
+                        <p className='shoppingCart__details'>Do zapłaty (w tym VAT)</p>
+                        <p className='shoppingCart__detailsValue'>{this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) + deliveryPrice : 0 }</p>
+                    </div>
 
-                {this.state.isLoggedIn && orders.length > 0? <Link to ={'/user/orders'} exact ><button className='shoppingCart__button btn btn-success'>przejdź do zamówienia </button></Link> : (this.state.isLoggedIn ? <button className='shoppingCart__button btn btn-success' disabled>Dodaj produkty do koszyka</button> :<button className='shoppingCart__button btn btn-success' disabled> zaloguj sie zaby kontynuować</button>) } 
-        
-                
+                {/* <p className='shoppingCart__text'>W sumie <span className='shoppingCart__span'>{this.state.orderItems.length}</span> przedmiotów. Łączna kwota do zapłaty to <span className='shoppingCart__span'>
+                    {this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</span></p> */}
+
+                {orders.length > 0? <Link to ={'/order'} exact ><button className='shoppingCart__button btn btn-success'>przejdź do kasy </button></Link> : <button className='shoppingCart__button btn btn-success' disabled>Koszyk jest pusty</button> } 
+                </div>
+                <div className="shoppingCart__flexStart">
+                    <div className="shoppingCart__termin">
+                            <p>Przewidywana data dostawy :</p>
+                            <p>13.13.2013</p>
+                    </div>
+                    <div className="shoppingCart__payment">
+                        <p>Sposoby płatności</p>
+                        <div className="shoppingCart__paymentCards">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fas fa-network-wired"></i>
+                            <i class="fas fa-wallet"></i>
+                            <i class="fas fa-mail-bulk"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
          );
     }
