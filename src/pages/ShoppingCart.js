@@ -91,12 +91,12 @@ class ShoppingCart extends Component {
                 {/* <p className='shoppingCart__text'>W sumie <span className='shoppingCart__span'>{this.state.orderItems.length}</span> przedmiotów. Łączna kwota do zapłaty to <span className='shoppingCart__span'>
                     {this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</span></p> */}
 
-                {orders.length > 0? <Link to ={'/order'} exact ><button className='shoppingCart__button btn btn-success'>przejdź do kasy </button></Link> : <button className='shoppingCart__button btn btn-success' disabled>Koszyk jest pusty</button> } 
+                {orders.length > 0? <Link to ={'/checkout'} exact ><button className='shoppingCart__button btn btn-success'>przejdź do kasy </button></Link> : <button className='shoppingCart__button btn btn-success' disabled>Koszyk jest pusty</button> } 
                 </div>
                 <div className="shoppingCart__flexStart">
                     <div className="shoppingCart__termin">
                             <p>Przewidywana data dostawy :</p>
-                            <p>13.13.2013</p>
+                            <p>{orders.length>0 ? '13.13.2013' : null}</p>
                     </div>
                     <div className="shoppingCart__payment">
                         <p>Sposoby płatności</p>

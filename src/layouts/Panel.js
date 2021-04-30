@@ -47,7 +47,7 @@ class Panel extends Component{
                         <li 
                         onMouseEnter={this.state.isHovered ? null : this.handleMenuHover} 
                         onClick={this.state.isHovered? this.handleMenuHover : null } 
-                        onMouseLeave={this.state.isHovered ? this.handleMenuHover : 0}
+                        onMouseLeave={this.state.isHovered ? this.handleMenuHover : null}
 
                         // onClick={this.handleMenuHover} 
                         // onMouseLeave={this.state.isHovered? this.handleMenuHover : null } 

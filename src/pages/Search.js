@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
-import {laptops} from '../pages/Laptops';
-import {mp3} from '../pages/Mp3s';
-import {phones} from '../pages/Phones';
-import {tv} from '../pages/Tv';
-import {cars} from '../pages/Cars';
-import Item from '../components/Item'
+import {products} from '../components/Item'
 import '../styles/Search.css'
-
-let products = laptops.concat( mp3, phones, tv, cars);
-
+import ItemSearch from '../components/ItemSearch'
 
 class Search extends Component {
 
@@ -51,7 +44,7 @@ class Search extends Component {
                     <button className='searchForm__button btn btn-dark' onClick ={this.handleClick}>Wyczyść wyszukiwanie</button>
                     {(this.state.value && products.length === data2.length) ? <p className='searchForm__info' >Nie znaleziono wyszukiwanych produktów</p> : null }
                 </form>
-                {this.state.value && data.length > 0 ? <Item data={data}/> : null}
+                {this.state.value && data.length > 0 ? <ItemSearch data={data}/> : null}
                
             </>
          );

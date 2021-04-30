@@ -8,15 +8,15 @@
 }
 
 .shoppingCart__orders {
-    background-color: red;
+    background-color: white;
     flex-basis: 60%;
     
 }
 
 .shoppingCart__summary{
-    background-color: blue;
-    flex-basis: 30%;
-    min-height: 40%;
+    background-color: white;
+    flex-basis: 35%;
+    max-height: 40%;
     display: flex;
     flex-direction: column;
 }
@@ -103,18 +103,22 @@
 }
 
 .shoppingCart__payment {
- flex-basis: 80%;
- background-color: green;
+width: 60%;
+ background-color: white;
  min-height: 10vh;
  display: flex;
  flex-direction: column;
+ margin: 10px 0;
+padding: 10px;
 }
 
 .shoppingCart__termin {
-flex-basis: 80%;
+width: 60%;
 min-height: 10vh;
 justify-content: last baseline;
-background-color: brown;
+background-color: white;
+margin: 10px 0;
+padding: 10px;
 }
 
 .shoppingCart__flexStart {
@@ -129,5 +133,7 @@ background-color: brown;
     display: flex;
     width: 30%;
     justify-content: space-between;
-    margin: 0 30px;
+    margin: 0 10px;
+    background-color: grey;
+    padding: 10px;
 }
