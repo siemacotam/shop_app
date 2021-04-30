@@ -6,16 +6,16 @@ import {orders} from '../pages/ShoppingCart'
 
 class Panel extends Component{
     state = {
-        isClicked: false,
+        // isClicked: false,
         orders: 0,
         isHovered: false,
     }
 
-    handleClick = () => {
-        this.setState({
-            isClicked: !this.state.isClicked
-        })
-    }
+    // handleClick = () => {
+    //     this.setState({
+    //         isClicked: !this.state.isClicked
+    //     })
+    // }
 
     handleMenuHover = () => {
         this.setState({
@@ -35,7 +35,7 @@ class Panel extends Component{
     render (){ 
 
         const items = ['Cars', 'Phones', 'Mp3s', 'Tv','Laptops']
-        const categories = items.map(item=> <li className='slideMenu__element'><Link to ={`/categories/${item.toLowerCase()}`} className='slideMenu__link'>{item}</Link></li>  )
+        const categories = items.map(item=> <li key={item} className='slideMenu__element'><Link to ={`/categories/${item.toLowerCase()}`} className='slideMenu__link'>{item}</Link></li>  )
 
         return (
         <>
@@ -76,11 +76,14 @@ class Panel extends Component{
                             </NavLink>
                         </li>
                         { this.props.isLoggedIn? <li className='mainMenu__element'><NavLink to ={'/user'} exact >moje konto</NavLink></li>  : <li className='mainMenu__element'>
-                            <button onClick={this.handleClick} type="button" className=" btn btn-primary">zaloguj</button>
+                            <button onClick={this.props.handleClick} type="button" className=" btn btn-primary">zaloguj</button>
+                            {/* <button onClick={this.handleClick} type="button" className=" btn btn-primary">zaloguj</button> */}
                         </li>}
                 </ul>
             </nav> 
-            {this.state.isClicked ? <LoginMenu logged ={this.props.logged} click={this.handleClick}/> : null}
+
+            {/* {this.state.isClicked ? <LoginMenu logged ={this.props.logged} click={this.handleClick}/> : null} */}
+            {this.props.isClicked ? <LoginMenu logged ={this.props.logged} click={this.props.handleClick}/> : null}
         </>
         )};
 }

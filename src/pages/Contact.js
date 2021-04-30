@@ -125,7 +125,7 @@ class Contact extends Component {
                 onChange={this.handleChange} 
                 placeholder='Wpisz wiadomość...'></textarea>
                  {this.state.errors.note && <span className='contactForm__validation' >{this.messages.note_incorrect}</span>}
-                <button class="contactForm__button btn btn-success">Wyślij</button>
+                <button className="contactForm__button btn btn-success">Wyślij</button>
                 {this.state.message && <span className='contactForm__validation contactForm__validation--sent'>{this.state.message}</span>}
             </form>
             <Prompt

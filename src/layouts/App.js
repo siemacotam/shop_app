@@ -9,11 +9,18 @@ import Page from './Page'
 class App extends Component {
   state = { 
     isLoggedIn: false,
+    isClicked: false,
    }
 
   logged = () => {
     this.setState({
       isLoggedIn: true,
+  })
+}
+
+handleClick = () => {
+  this.setState({
+      isClicked: !this.state.isClicked
   })
 }
 
@@ -23,13 +30,13 @@ class App extends Component {
       <Router basename={process.env.PUBLIC_URL}>
           <div className='App'>
             <header>
-                {<Panel isLoggedIn = {this.state.isLoggedIn} logged ={this.logged}/>}
+                {<Panel isLoggedIn = {this.state.isLoggedIn} logged ={this.logged} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
             </header>
             <aside>
                 {<Banner />}
             </aside>
             <section className="page">
-                {<Page logged ={this.logged} isLoggedIn = {this.state.isLoggedIn}/>}
+                {<Page logged ={this.logged} isLoggedIn = {this.state.isLoggedIn} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
               </section>
               <footer>{<Footer />}</footer>
           </div>

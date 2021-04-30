@@ -42,7 +42,6 @@ class ShoppingCart extends Component {
       }
 
 
-
     render() { 
 
         const orderList = this.state.orderItems.map(item => 
@@ -76,7 +75,7 @@ class ShoppingCart extends Component {
                     }>Wyczyść koszyk</button>
                 </div>
                 <div className="shoppingCart__summary">
-                    <h3 className='shoppingCart__title'>Kasa</h3>
+                    <h3 className='shoppingCart__title'>Do zapłaty</h3>
                     <div className='shoppingCart__values'>
                         <p className='shoppingCart__details' >Wartość produktów</p>
                         <p className='shoppingCart__detailsValue'> {this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</p>
@@ -88,9 +87,6 @@ class ShoppingCart extends Component {
                         <p className='shoppingCart__detailsValue'>{this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) + deliveryPrice : 0 }</p>
                     </div>
 
-                {/* <p className='shoppingCart__text'>W sumie <span className='shoppingCart__span'>{this.state.orderItems.length}</span> przedmiotów. Łączna kwota do zapłaty to <span className='shoppingCart__span'>
-                    {this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</span></p> */}
-
                 {orders.length > 0? <Link to ={'/checkout'} exact ><button className='shoppingCart__button btn btn-success'>przejdź do kasy </button></Link> : <button className='shoppingCart__button btn btn-success' disabled>Koszyk jest pusty</button> } 
                 </div>
                 <div className="shoppingCart__flexStart">
@@ -101,11 +97,11 @@ class ShoppingCart extends Component {
                     <div className="shoppingCart__payment">
                         <p>Sposoby płatności</p>
                         <div className="shoppingCart__paymentCards">
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fas fa-network-wired"></i>
-                            <i class="fas fa-wallet"></i>
-                            <i class="fas fa-mail-bulk"></i>
+                            <i className="fab fa-cc-visa"></i>
+                            <i className="fab fa-cc-mastercard"></i>
+                            <i className="fas fa-network-wired"></i>
+                            <i className="fas fa-wallet"></i>
+                            <i className="fas fa-mail-bulk"></i>
                         </div>
                     </div>
                 </div>

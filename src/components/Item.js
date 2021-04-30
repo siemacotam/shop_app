@@ -266,6 +266,13 @@ class Item extends Component {
         number: '1',
     }
 
+    componentDidMount(){
+        window.scrollTo(0,400)
+    }
+
+    componentDidUpdate(){
+        window.scrollTo(0,400)
+    }
 
 
     render() { 
@@ -273,9 +280,6 @@ class Item extends Component {
 const siema = products.filter(item => { if(item.category === this.props.id){
     return item
 } })
-
-console.log(siema)
-
 
         const items = siema.map(item => 
             <div key={item.name} className='product'> 
