@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/LoginMenu.css'
+import {users} from '../pages/UserAccount'
+
+
 
 class LoginMenu extends Component {
     
@@ -11,12 +14,14 @@ class LoginMenu extends Component {
         errors: {
             username: false,
             password: false,
+            loginPass: false,
           },
      }
 
      messages = {
-        username_incorrect: 'Login nieprawidłowy. Nazwa musi mieć minimum 10 znaków i nie może zawierać przerwy.',
-        password_incorrect: 'Hasło nieprawidłowe.Hasło musi posiadać min 6 znaków i nie może zawierać przerwy',
+        username_incorrect: ' Nazwa musi mieć minimum 3 znaków i nie może zawierać przerwy.',
+        password_incorrect: ' Hasło musi posiadać min 3 znaków i nie może zawierać przerwy',
+        loginPass_incorrect: 'Login lub hasło nieprawidłowe'
       }
 
     
@@ -32,14 +37,23 @@ class LoginMenu extends Component {
         let username = false;
         let password = false;
         let correct = false;
+        let loginPass = false;
+
+        const user = users.filter(item => {if(item.login === this.state.username) return 1})
+        const userData = user[0]    
+        console.log(userData)
     
-        if(this.state.username.length >=10 && this.state.username.indexOf(' ') === -1 && this.state.username === 'adminadmin'){
+        if(this.state.username.length >4 && this.state.username.indexOf(' ') === -1 ){
           username = true
         }
-        if(this.state.password.length >6 && this.state.password.indexOf(' ') === -1 && this.state.password === 'adminadmin'){
+        if(this.state.password.length >4 && this.state.password.indexOf(' ') === -1 ){
           password = true
         }
-        if(username && password){
+        if(user.length !== 0){
+          if(this.state.username === userData.login && this.state.password === userData.password){
+            loginPass = true
+          }}
+        if(username && password && loginPass){
           correct = true
         }
     
@@ -47,6 +61,7 @@ class LoginMenu extends Component {
           username,
           password,
           correct,
+          loginPass,
         })
       }
 
@@ -64,6 +79,7 @@ class LoginMenu extends Component {
             errors: {
               username: false,
               password: false,
+              loginPass: false,
             },
           })
           const logged= this.props.logged
@@ -75,6 +91,7 @@ class LoginMenu extends Component {
             errors: {
               username: !validation.username,
               password: !validation.password,
+              loginPass: !validation.loginPass,
             },
           })
         }
@@ -82,6 +99,8 @@ class LoginMenu extends Component {
     }
 
     render() { 
+
+      
         return ( 
             <div className='loginMenu'>
                   <h1 className='loginMenu__h1'>Zaloguj się</h1>
@@ -97,6 +116,7 @@ class LoginMenu extends Component {
                     <button className="btn btn-success loginMenu__btn" disabled={!this.state.username && !this.state.password}>zaloguj</button>
                   </form>
                   {this.state.logMessage && <h3>{this.state.logMessage}</h3> }
+                  {this.state.errors.loginPass && <span>{this.messages.loginPass_incorrect}</span>}
                   <button type="button" className="btn-close loginMenu__btn" aria-label="Close" onClick={this.props.click}></button>
              </div>
          );

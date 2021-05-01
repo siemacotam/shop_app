@@ -15,3 +15,12 @@
     text-align: center;
     background-color: blue;
 }
+
+.checkoutMenu__register {
+    margin: 30px auto;
+}
+
+.checkoutMenu span{
+    color: red;
+    font-size: 10px;
+}

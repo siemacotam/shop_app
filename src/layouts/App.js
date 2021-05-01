@@ -17,6 +17,11 @@ class App extends Component {
       isLoggedIn: true,
   })
 }
+unlogged = () => {
+  this.setState({
+    isLoggedIn: false,
+})
+}
 
 handleClick = () => {
   this.setState({
@@ -36,7 +41,7 @@ handleClick = () => {
                 {<Banner />}
             </aside>
             <section className="page">
-                {<Page logged ={this.logged} isLoggedIn = {this.state.isLoggedIn} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
+                {<Page logged ={this.logged} unlogged ={this.unlogged} isLoggedIn = {this.state.isLoggedIn} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
               </section>
               <footer>{<Footer />}</footer>
           </div>

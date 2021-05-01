@@ -21,11 +21,10 @@ const Page = (props) => {
                 <Route path='/categories' exact component={Categories}></Route>
                 <Route path='/categories/:id' component={ItemsList} ></Route>
                 <Route path='/shoppingcart' render={() => <ShoppingCart isLoggedIn={props.isLoggedIn} />} ></Route>
-                {props.isLoggedIn ?  <Route path='/user' component={UserAccount}></Route> : null }
+                <Route path='/user' render={() => <UserAccount isLoggedIn={props.isLoggedIn} unlogged ={props.unlogged}/>}></Route> 
                 <Route path='/search' component={Search}></Route>
                 <Route path='/contact' component={Contact}></Route>
-                 <Route path='/checkout' render={() => <Checkout isLoggedIn={props.isLoggedIn} logged ={props.logged} isClicked={props.isClicked} handleClick={props.handleClick}/>
-                 } ></Route>
+                 <Route path='/checkout' render={() => <Checkout isLoggedIn={props.isLoggedIn} logged ={props.logged} isClicked={props.isClicked} handleClick={props.handleClick}/>} ></Route>
                 <Route component={ErrorPage}></Route>
             </Switch>
         </>
