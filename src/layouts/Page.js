@@ -8,9 +8,9 @@ import {Route, Switch} from 'react-router-dom'
 import Contact from '../pages/Contact'
 import '../styles/Page.css'
 import ErrorPage from '../pages/ErrorPage'
-import Checkout from '../pages/Checkout'
+import Login from '../pages/Login'
 import ItemsList from '../pages/ItemsList'
-import {orders} from '../pages/ShoppingCart'
+import Checkout from '../pages/Checkout'
 
 const Page = (props) => {
     return ( 
@@ -21,10 +21,12 @@ const Page = (props) => {
                 <Route path='/categories' exact component={Categories}></Route>
                 <Route path='/categories/:id' component={ItemsList} ></Route>
                 <Route path='/shoppingcart' render={() => <ShoppingCart isLoggedIn={props.isLoggedIn} />} ></Route>
-                <Route path='/user' render={() => <UserAccount isLoggedIn={props.isLoggedIn} unlogged ={props.unlogged}/>}></Route> 
+                {props.isLoggedIn? <Route path='/user' render={() => <UserAccount isLoggedIn={props.isLoggedIn} unlogged ={props.unlogged} activeUser={props.activeUser}/>}></Route> : null }
                 <Route path='/search' component={Search}></Route>
                 <Route path='/contact' component={Contact}></Route>
-                 <Route path='/checkout' render={() => <Checkout isLoggedIn={props.isLoggedIn} logged ={props.logged} isClicked={props.isClicked} handleClick={props.handleClick}/>} ></Route>
+                <Route path='/checkout' render={() => <Checkout activeUser={props.activeUser} user={props.user} isLoggedIn={props.isLoggedIn} logged ={props.logged} isClicked={props.isClicked} handleClick={props.handleClick}/>}></Route>
+
+                {/* <Route path='/checkout/login' render={() => <Login isLoggedIn={props.isLoggedIn} logged ={props.logged} isClicked={props.isClicked} handleClick={props.handleClick}/>} ></Route> */}
                 <Route component={ErrorPage}></Route>
             </Switch>
         </>

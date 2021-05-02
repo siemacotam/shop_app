@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import '../styles/LoginMenu.css'
 import {users} from '../pages/UserAccount'
 
-
-
 class LoginMenu extends Component {
     
     state = { 
@@ -40,8 +38,8 @@ class LoginMenu extends Component {
         let loginPass = false;
 
         const user = users.filter(item => {if(item.login === this.state.username) return 1})
-        const userData = user[0]    
-        console.log(userData)
+        const userData = user[0]  
+       
     
         if(this.state.username.length >4 && this.state.username.indexOf(' ') === -1 ){
           username = true
@@ -62,6 +60,7 @@ class LoginMenu extends Component {
           password,
           correct,
           loginPass,
+          userData,
         })
       }
 
@@ -86,6 +85,8 @@ class LoginMenu extends Component {
             logged()
 
             this.props.click()
+
+            this.props.user(validation.userData)
         } else {
           this.setState({
             errors: {

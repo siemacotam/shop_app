@@ -43,8 +43,6 @@ class Panel extends Component{
                         onClick={this.state.isHovered? this.handleMenuHover : null } 
                         onMouseLeave={this.state.isHovered ? this.handleMenuHover : null}
 
-                        // onClick={this.handleMenuHover} 
-                        // onMouseLeave={this.state.isHovered? this.handleMenuHover : null } 
                         className='mainMenu__element shopLi'>
                              <NavLink to ={'/categories'} exact >
                                 shop
@@ -74,7 +72,7 @@ class Panel extends Component{
                         </li>}
                 </ul>
             </nav> 
-            {this.props.isClicked ? <LoginMenu logged ={this.props.logged} click={this.props.handleClick}/> : null}
+            {this.props.isClicked ? <LoginMenu user={this.props.user} logged ={this.props.logged} click={this.props.handleClick}/> : null}
         </>
         )};
 }

@@ -1,0 +1,71 @@
+.checkoutMenu__wrap {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.checkoutMenu {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.checkoutMenu__stepsPanel{
+    height: 10vh;
+    width: 100%;
+}
+.checkoutMenu__nav{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+.checkoutMenu__navElement{
+    flex-basis: 20%;
+    list-style: none;
+    text-align: center;
+}
+
+.stepActive {
+    font-weight: bold;
+}
+
+.checkoutMenu__logPanel {
+    flex-basis: 40%;
+    text-align: center;
+    background-color: white;
+    padding: 30px 0;
+}
+
+.checkoutMenu__newUserPanel {
+    flex-basis: 40%;
+    text-align: center;
+    background-color: white;
+    padding: 30px 0;
+}
+
+.checkoutMenu__register {
+    margin: 30px auto;
+}
+
+.hide{
+    display: none;
+}
+
+.checkoutMenu__head {
+    display: none;
+}
+
+.checkoutMenu__label {
+    margin: 5px 0;
+}
+
+.checkoutMenu span{
+    color: red;
+    font-size: 10px;
+}
+
+.checkoutMenu__title {
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -10,6 +10,7 @@ class App extends Component {
   state = { 
     isLoggedIn: false,
     isClicked: false,
+    activeUser: {},
    }
 
   logged = () => {
@@ -22,6 +23,11 @@ unlogged = () => {
     isLoggedIn: false,
 })
 }
+handleActiveUser = (data) => {
+  this.setState({
+    activeUser: data
+  })
+}
 
 handleClick = () => {
   this.setState({
@@ -31,17 +37,18 @@ handleClick = () => {
 
 
   render() { 
+    console.log(this.state.activeUser)
     return ( 
       <Router basename={process.env.PUBLIC_URL}>
           <div className='App'>
             <header>
-                {<Panel isLoggedIn = {this.state.isLoggedIn} logged ={this.logged} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
+                {<Panel user ={this.handleActiveUser} isLoggedIn = {this.state.isLoggedIn} logged ={this.logged} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
             </header>
             <aside>
                 {<Banner />}
             </aside>
             <section className="page">
-                {<Page logged ={this.logged} unlogged ={this.unlogged} isLoggedIn = {this.state.isLoggedIn} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
+                {<Page activeUser={this.state.activeUser} user ={this.handleActiveUser} logged ={this.logged} unlogged ={this.unlogged} isLoggedIn = {this.state.isLoggedIn} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
               </section>
               <footer>{<Footer />}</footer>
           </div>

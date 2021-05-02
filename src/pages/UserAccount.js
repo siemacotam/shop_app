@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/UserAccount.css'
 import {Link} from 'react-router-dom'
 
+
 export const users = [
     {
       login: 'user1',
@@ -35,16 +36,11 @@ class UserAccount extends Component {
 
     render() { 
 
-        const user = users.filter(item => {if(item.login === this.state.username) return 1})
-
-    
-       
-
         return ( 
             <div className='userPanel'>
-                <h1>Witaj  :) </h1>
+                <h1>Witaj {this.props.activeUser.name} :) </h1>
                 <p>dane użytkownika</p>
-                <p>ustawienia konta</p>
+                <p>{this.props.activeUser.login}{this.props.activeUser.email}{this.props.activeUser.city}{this.props.activeUser.surname}</p>
                 <p>twoje zakupy</p>
                 <button onClick={this.props.unlogged} > <Link to={'/'}>wyloguj</Link></button>
             </div>
