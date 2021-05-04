@@ -13,7 +13,7 @@ export const users = [
       adress: 'dluga',
       adressNumber: '21',
       city: 'kalisz',
-      postcode: 62-800,
+      postcode: 62800,
       phone: 123456789,
     },
     {
@@ -25,7 +25,7 @@ export const users = [
       adress: 'Migdałowa',
       adressNumber: '21',
       city: 'kalisz',
-      postcode: 62-800,
+      postcode: 62800,
       phone: 791090708,
     }
   ]

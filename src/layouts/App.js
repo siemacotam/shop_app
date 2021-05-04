@@ -37,7 +37,6 @@ handleClick = () => {
 
 
   render() { 
-    console.log(this.state.activeUser)
     return ( 
       <Router basename={process.env.PUBLIC_URL}>
           <div className='App'>

@@ -28,6 +28,9 @@
 
 .stepActive {
     font-weight: bold;
+    background-color: grey;
+    border: 1px solid grey;
+    border-radius: 10px;
 }
 
 .checkoutMenu__logPanel {

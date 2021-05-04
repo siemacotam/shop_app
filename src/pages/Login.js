@@ -13,10 +13,10 @@ class Login extends Component {
         surname:'',
         email:'',
         adress: '',
-        adressNumber: null,
+        adressNumber: '',
         city: '',
-        postcode: null,
-        phone: null,
+        postcode: '',
+        phone: '',
         logMessage: '',
 
         errors: {
@@ -65,7 +65,7 @@ class Login extends Component {
         let phone = false;
         let correct = false;
 
-        const usedName = users.filter(item => {if(item.login === this.state.login) return 1})
+       let usedName = users.filter(item => {if(item.login === this.state.login) return 1})
 
         if(usedName.length === 0){
             loginDouble = true

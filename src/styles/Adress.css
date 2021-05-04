@@ -1,0 +1,37 @@
+.checkoutMenu__adress {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.checkoutMenu__adressElement {
+    flex-basis: 45%;
+    min-height: 25vh;
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+}
+
+.checkoutMenu__buttonDiv {
+    flex-basis: 45%;
+    padding: 20px;
+    margin: 20px;
+}
+
+.checkoutMenu__buttonDiv button{
+    width: 100%;
+    background-color: grey;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    color: white;
+}
+
+.checkoutMenu__adressTitle {
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 3px solid grey
+}
+
