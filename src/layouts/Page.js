@@ -8,9 +8,10 @@ import {Route, Switch} from 'react-router-dom'
 import Contact from '../pages/Contact'
 import '../styles/Page.css'
 import ErrorPage from '../pages/ErrorPage'
-import Login from '../pages/Login'
 import ItemsList from '../pages/ItemsList'
 import Checkout from '../pages/Checkout'
+import Payment from '../pages/Payment'
+import Summary from '../pages/Summary'
 
 const Page = (props) => {
     return ( 
@@ -26,7 +27,6 @@ const Page = (props) => {
                 <Route path='/contact' component={Contact}></Route>
                 <Route path='/checkout' render={() => <Checkout activeUser={props.activeUser} user={props.user} isLoggedIn={props.isLoggedIn} logged ={props.logged} isClicked={props.isClicked} handleClick={props.handleClick}/>}></Route>
 
-                {/* <Route path='/checkout/login' render={() => <Login isLoggedIn={props.isLoggedIn} logged ={props.logged} isClicked={props.isClicked} handleClick={props.handleClick}/>} ></Route> */}
                 <Route component={ErrorPage}></Route>
             </Switch>
         </>

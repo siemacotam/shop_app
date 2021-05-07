@@ -25,3 +25,7 @@ body {
 .textarea {
   padding: 5px;
 }
+
+a {
+  display: block;
+}

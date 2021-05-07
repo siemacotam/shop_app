@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LoginMenu from './LoginMenu'
 import '../styles/Login.css'
 import {users} from './UserAccount'
+import {Link} from 'react-router-dom'
 
 class Login extends Component {
     state = { 
@@ -212,7 +213,6 @@ class Login extends Component {
           [name]: value
         })
       }
- 
 
     render() { 
         return ( 

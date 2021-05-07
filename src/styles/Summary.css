@@ -1,0 +1,59 @@
+.summary__wrap {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255,255,0.5);
+}
+
+.summary__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+.summary__shipment {
+    flex-basis: 50%;
+    padding: 20px;
+}
+
+.summary__orderDetails {
+    flex-basis: 40%;
+    padding: 20px;
+}
+
+.summary__order {
+    flex-basis: 50%;
+}
+
+.summary__orderButton {
+    flex-basis: 40%;
+    background-color: grey;
+    padding: 15px;
+}
+
+.summary__text {
+    padding: 5px;
+} 
+.summary__text--bold {
+    font-weight: bold;
+} 
+.summary__text--big {
+    font-size: 20px;
+}
+.summary__text--border {
+    border-bottom: 2px solid grey;
+}
+
+.summary_flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary_flex.summary__text--border {
+    border-color: black;
+}

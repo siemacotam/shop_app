@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {orders} from '../pages/ShoppingCart'
 import {users} from '../pages/UserAccount'
+import '../styles/Summary.css'
+import {Link} from 'react-router-dom'
 
 class Summary extends Component {
     state = {  }
@@ -33,23 +35,25 @@ class Summary extends Component {
         return ( 
            <div className="summary__wrap">
                <div className="summary__title">
-                   <p>sprawdź i potwierdź zamówienie</p>
-                   <button>Potwierdź i zapłać wybraną metodą</button>
+                   <p className='summary__text summary__text--bold summary__text--big'>Sprawdź i potwierdź zamówienie</p>
+                   <button className='summary__button btn btn-success'>Potwierdź i zapłać wybraną metodą</button>
                </div>
                <div className="summary__shipment">
-                   <p>rodzaj przesyłki</p>
+                   <p className='summary__text summary__text--bold summary__text--border' >Rodzaj przesyłki :</p>
                    <p>opcje</p>
                </div>
                <div className="summary__orderDetails">
-                   <p>Adres dostawy</p>
-                   <p>dane</p>
-                    <p>adres rachunku</p>
-                    <p>dane</p>
-                    <p>metoda płatności</p>
+                   <p className='summary__text summary__text--bold summary__text--border'>Adres dostawy :</p>
+                   <p>{this.props.activeUser.name} {this.props.activeUser.surname}</p>
+                    <p>{this.props.activeUser.adress} {this.props.activeUser.adressNumber}</p>
+                    <p>{this.props.activeUser.postcode} {this.props.activeUser.city}</p>
+                    <p className='summary__text summary__text--bold summary__text--border' >Adres rachunku :</p>
+                    <p>Taki sam jak dostawy</p>
+                    <p className='summary__text summary__text--bold summary__text--border'>Metoda płatności: </p>
                     <p>metoda</p>
                </div>
                <div className="summary__order">
-                   <p>zamówienie</p>
+                   <p className='summary__text summary__text--bold summary__text--border' >zamówienie</p>
                    <div>
                        <ul>
                            {orderList}
@@ -57,9 +61,16 @@ class Summary extends Component {
                    </div>
                </div>
                <div className="summary__orderButton">
-                   <p>przesyłka</p>
-                   <p>do zapłaty</p>
-                   <button >Potwierdź i zapłać wybraną metodą</button>
+                   <div className='summary_flex summary__text--border'>
+                     <p className='summary__text summary__text--bold'>Przesyłka</p>
+                     <p>Gratis</p>
+                    </div>
+                    <div className='summary_flex'>
+                   <p className='summary__text summary__text--bold'>Do zapłaty</p>
+                   <p>{orders.length > 0 ? (orders.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</p>
+                   </div>
+                   <p>Składając zamówienie na Celek.pl, akceptujesz Postanowienia Polityki Prywatności, Regulamin oraz zasady odstąpienia od umowy. Potwierdzasz także, że ten zakup jest przeznaczony wyłącznie do użytku osobistego. Możemy okazjonalnie wysyłać do Ciebie wiadomości e-mail z rekomendacjami dotyczącymi produktów. Nie przejmuj się, możesz w każdym momencie zrezygnować z subskrybcji, klikając w link w wiadomości e-mail.</p>
+                   <button className='summary__button btn btn-success'>Potwierdź i zapłać wybraną metodą</button>
                </div>
            </div>
 

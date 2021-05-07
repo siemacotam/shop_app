@@ -3,6 +3,7 @@ import Login from '../pages/Login'
 import Adress from '../pages/Adress'
 import Payment from '../pages/Payment'
 import Summary from '../pages/Summary'
+import {Route, Link} from 'react-router-dom'
 
 class Checkout extends Component {
     state = { 
@@ -14,6 +15,8 @@ class Checkout extends Component {
             activeStep: number
         })
      }
+
+     
 
 
     render() { 
@@ -28,9 +31,18 @@ class Checkout extends Component {
                         <li className={this.state.activeStep === 5 ? 'checkoutMenu__navElement stepActive' : 'checkoutMenu__navElement'}>Gotowe</li>
                      </ul>
                 </div>
-                {this.props.isLoggedIn ? (this.state.activeStep < 3 ? <Adress step={this.changeStep} activeUser={this.props.activeUser}/> : null) : <Login step={this.changeStep} user={this.props.user} isLoggedIn={this.props.isLoggedIn} logged ={this.props.logged} isClicked={this.props.isClicked} handleClick={this.props.handleClick}/>}
+
+                <Route path='/checkout/login' render={() => <Login step={this.changeStep} user={this.props.user} isLoggedIn={this.props.isLoggedIn} logged ={this.props.logged} isClicked={this.props.isClicked} handleClick={this.props.handleClick} />}></Route>
+                <Route path='/checkout/adress' render={() => <Adress step={this.changeStep} activeUser={this.props.activeUser} />}></Route>
+                <Route path='/checkout/payment'  render={() => <Payment step={this.changeStep} />}></Route>
+                <Route path='/checkout/summary' render={() => <Summary step={this.changeStep} activeUser={this.props.activeUser}/>}></Route>
+
+
+
+
+                {/* {this.props.isLoggedIn ? (this.state.activeStep < 3 ? <Adress step={this.changeStep} activeUser={this.props.activeUser}/> : null) : <Login step={this.changeStep} user={this.props.user} isLoggedIn={this.props.isLoggedIn} logged ={this.props.logged} isClicked={this.props.isClicked} handleClick={this.props.handleClick}/>}
                 {this.state.activeStep === 3 ? <Payment step={this.changeStep}/> : null}
-                {this.state.activeStep === 4? <Summary step={this.changeStep}/> : null}
+                {this.state.activeStep === 4? <Summary step={this.changeStep} activeUser={this.props.activeUser}/> : null} */}
             </div>
          );
     }

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 
 class Payment extends Component {
     state = { 
-        value: 1,
+        value: '',
      }
 
      handleChange = (e) => {
-        //  console.log(e.target.value)
         this.setState({
             value: e.target.value
         })
@@ -41,7 +41,7 @@ class Payment extends Component {
                        <p>Aktualnie staramy się zrobić jak najwięcej, aby ograniczyć osobiste kontakty. Z tego powodu, zachęcamy Cię do wybrania płatności online (bezdotykowych) za Twoje zamówienie. Jeśli jednak zdecydujesz się na płatność „za pobraniem”, prosimy o przygotowanie odliczonej kwoty dla kuriera.</p>
                     </div> : null}
                 </div>
-                <div><p>przesyłka</p><p>łączna kwota</p><button disabled={this.state.value ==1} onClick={() => {this.props.step(4)}}>Dalej</button></div>
+                <div><p>przesyłka</p><p>łączna kwota</p><button disabled={this.state.value === ''} onClick={() => {this.props.step(4)}}> <Link to='/checkout/summary'> Dalej</Link></button></div>
             </div>
          );
     }

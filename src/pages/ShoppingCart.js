@@ -87,7 +87,9 @@ class ShoppingCart extends Component {
                         <p className='shoppingCart__detailsValue'>{this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) + deliveryPrice : 0 }</p>
                     </div>
 
-                {orders.length > 0? <Link to ={'/checkout'} exact ><button className='shoppingCart__button btn btn-success'>przejdź do kasy </button></Link> : <button className='shoppingCart__button btn btn-success' disabled>Koszyk jest pusty</button> } 
+                {orders.length > 0? <Link to ={'/checkout'} exact ><button className='shoppingCart__button btn btn-success'>
+                    {this.state.isLoggedIn ? <Link to ='/checkout/adress'> przejdź do kasy </Link> : <Link to ='/checkout/login'> przejdź do kasy </Link>}
+                    </button></Link> : <button className='shoppingCart__button btn btn-success' disabled>Koszyk jest pusty</button> } 
                 </div>
                 <div className="shoppingCart__flexStart">
                     <div className="shoppingCart__termin">

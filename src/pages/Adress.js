@@ -1,6 +1,7 @@
 import React, { Component } from 'react';    
 import '../styles/Adress.css'   
 import {users} from '../pages/UserAccount'
+import {Link} from 'react-router-dom'
 
 class Adress extends Component {
     state = { 
@@ -59,7 +60,7 @@ class Adress extends Component {
                 <div className='checkoutMenu__buttonDiv' ><button 
                 onClick={() => {this.props.step(3)}
                 }
-                 >dalej</button></div>
+                 ><Link to ='/checkout/payment'>dalej</Link> </button></div>
             </div>
          );
     }
