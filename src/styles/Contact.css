@@ -1,4 +1,25 @@
+.contact__wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.about {
+    flex-basis: 45%;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.about__map {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    height: 60%;
+}
+
 .contactForm {
+    flex-basis: 45%;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     width: 50%;

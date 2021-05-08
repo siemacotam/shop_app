@@ -270,11 +270,6 @@ class Item extends Component {
         window.scrollTo(0,400)
     }
 
-    componentDidUpdate(){
-        window.scrollTo(0,400)
-    }
-
-
     render() { 
 
 const siema = products.filter(item => { if(item.category === this.props.id){

@@ -15,6 +15,7 @@ export const users = [
       city: 'kalisz',
       postcode: 62800,
       phone: 123456789,
+      bought: [],
     },
     {
       login: 'adminadmin',
@@ -27,6 +28,7 @@ export const users = [
       city: 'kalisz',
       postcode: 62800,
       phone: 791090708,
+      bought: [],
     }
   ]
 
@@ -36,12 +38,21 @@ class UserAccount extends Component {
 
     render() { 
 
+
         return ( 
             <div className='userPanel'>
                 <h1>Witaj {this.props.activeUser.name} :) </h1>
-                <p>dane użytkownika</p>
+                <p>Dane użytkownika</p>
+
+
+
+
                 <p>{this.props.activeUser.login}{this.props.activeUser.email}{this.props.activeUser.city}{this.props.activeUser.surname}</p>
-                <p>twoje zakupy</p>
+                <p>Twoje zamówienia</p>
+                <p>liczba zamówień </p>
+
+              
+
                 <button onClick={this.props.unlogged} > <Link to={'/'}>wyloguj</Link></button>
             </div>
          );

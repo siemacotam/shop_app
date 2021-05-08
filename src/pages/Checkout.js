@@ -3,7 +3,9 @@ import Login from '../pages/Login'
 import Adress from '../pages/Adress'
 import Payment from '../pages/Payment'
 import Summary from '../pages/Summary'
-import {Route, Link} from 'react-router-dom'
+import {Route} from 'react-router-dom'
+import PaymentMethod from '../pages/PaymentMethod'
+import Ordered from '../pages/Ordered'
 
 class Checkout extends Component {
     state = { 
@@ -32,11 +34,12 @@ class Checkout extends Component {
                      </ul>
                 </div>
 
-                <Route path='/checkout/login' render={() => <Login step={this.changeStep} user={this.props.user} isLoggedIn={this.props.isLoggedIn} logged ={this.props.logged} isClicked={this.props.isClicked} handleClick={this.props.handleClick} />}></Route>
+                <Route path='/checkout/login' render={() => <Login step={this.changeStep} user={this.props.user} isLoggedIn={this.props.isLoggedIn} logged ={this.props.logged} isClicked={this.props.isClicked} handleClick={this.props.handleClick} activeUser={this.props.activeUser}/>}></Route>
                 <Route path='/checkout/adress' render={() => <Adress step={this.changeStep} activeUser={this.props.activeUser} />}></Route>
                 <Route path='/checkout/payment'  render={() => <Payment step={this.changeStep} />}></Route>
                 <Route path='/checkout/summary' render={() => <Summary step={this.changeStep} activeUser={this.props.activeUser}/>}></Route>
-
+                <Route path='/checkout/paymentmethod' render={() => <PaymentMethod />}></Route>
+                <Route path='/checkout/ordered' render ={() => <Ordered step={this.changeStep} activeUser={this.props.activeUser}/>}></Route>
 
 
 

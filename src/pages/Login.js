@@ -214,12 +214,22 @@ class Login extends Component {
         })
       }
 
+      componentDidMount(){
+        this.props.step(1)
+    }
+
+
     render() { 
         return ( 
            <div className="checkoutMenu">
                 <div className='checkoutMenu__logPanel'>
-                    <h4>Witaj ponownie</h4>
-                { this.props.isLoggedIn? <p>dane z konta uzytkownika</p>  : <div>
+                { this.props.isLoggedIn? 
+                <div>
+                  <h4>Witaj {this.props.activeUser.name}</h4>
+                  <p>Kliknij aby kontynuować zamówienie</p>
+                  <button className='btn btn-success'><Link to='/checkout/adress'>Dalej</Link></button>
+                </div> : <div>
+                            <h4>Witaj ponownie</h4>
                             <button onClick={this.props.handleClick} type="button" className=" btn btn-primary">zaloguj</button>
                         </div>}
                         {this.props.isClicked ? <LoginMenu  user={this.props.user} logged ={this.props.logged} click={this.props.handleClick}/> : null}
@@ -227,7 +237,7 @@ class Login extends Component {
                 <div className="checkoutMenu__newUserPanel">
                     <div className={this.state.click ? "checkoutMenu__head" : null}>
                     <p className='checkoutMenu__title'>Jestes nowy ?</p>
-                    <button onClick={this.handleRegisterClick} className=" btn btn-primary">zarejestruj się</button>
+                    <button disabled ={this.props.isLoggedIn} onClick={this.handleRegisterClick} className=" btn btn-primary">zarejestruj się</button>
                     </div>
                     <div className={this.state.click ? "checkoutMenu__register" : "checkoutMenu__register hide"}>
                         <form className="checkoutMenu__form" onSubmit={this.handleSubmit}>
@@ -279,7 +289,7 @@ class Login extends Component {
                             <button className=" btn btn-primary">załóż konto</button><br/>
                             {this.state.logMessage && <h3>{this.state.logMessage}</h3> }
                         </form>
-                        <button onClick={this.handleRegisterClick} className=" btn btn-primary">powrót</button>
+                        {this.props.isLoggedIn ? null : <button onClick={this.handleRegisterClick} className=" btn btn-primary">powrót</button>}
                     </div>
                 </div>
            </div>

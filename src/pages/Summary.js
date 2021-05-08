@@ -3,6 +3,7 @@ import {orders} from '../pages/ShoppingCart'
 import {users} from '../pages/UserAccount'
 import '../styles/Summary.css'
 import {Link} from 'react-router-dom'
+import {selectedPaymentMethod} from '../pages/Payment'
 
 class Summary extends Component {
     state = {  }
@@ -20,6 +21,10 @@ class Summary extends Component {
     //     })
     //  }
 
+    componentDidMount(){
+        this.props.step(4)
+    }
+
     render() { 
 
         const orderList = orders.map(item => 
@@ -36,7 +41,7 @@ class Summary extends Component {
            <div className="summary__wrap">
                <div className="summary__title">
                    <p className='summary__text summary__text--bold summary__text--big'>Sprawdź i potwierdź zamówienie</p>
-                   <button className='summary__button btn btn-success'>Potwierdź i zapłać wybraną metodą</button>
+                   <Link to='/checkout/paymentmethod'><button className='summary__button btn btn-success'>Potwierdź i zapłać wybraną metodą</button></Link>
                </div>
                <div className="summary__shipment">
                    <p className='summary__text summary__text--bold summary__text--border' >Rodzaj przesyłki :</p>
@@ -50,7 +55,7 @@ class Summary extends Component {
                     <p className='summary__text summary__text--bold summary__text--border' >Adres rachunku :</p>
                     <p>Taki sam jak dostawy</p>
                     <p className='summary__text summary__text--bold summary__text--border'>Metoda płatności: </p>
-                    <p>metoda</p>
+                    <p>{selectedPaymentMethod}</p>
                </div>
                <div className="summary__order">
                    <p className='summary__text summary__text--bold summary__text--border' >zamówienie</p>
@@ -70,7 +75,7 @@ class Summary extends Component {
                    <p>{orders.length > 0 ? (orders.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</p>
                    </div>
                    <p>Składając zamówienie na Celek.pl, akceptujesz Postanowienia Polityki Prywatności, Regulamin oraz zasady odstąpienia od umowy. Potwierdzasz także, że ten zakup jest przeznaczony wyłącznie do użytku osobistego. Możemy okazjonalnie wysyłać do Ciebie wiadomości e-mail z rekomendacjami dotyczącymi produktów. Nie przejmuj się, możesz w każdym momencie zrezygnować z subskrybcji, klikając w link w wiadomości e-mail.</p>
-                   <button className='summary__button btn btn-success'>Potwierdź i zapłać wybraną metodą</button>
+                   <Link to='/checkout/paymentmethod'><button className='summary__button btn btn-success'>Potwierdź i zapłać wybraną metodą</button></Link> 
                </div>
            </div>
 

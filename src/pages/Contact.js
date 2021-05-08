@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/Contact.css'
 import { Prompt } from 'react-router-dom';
+import Mapa from '../pages/Mapa'
+
 
 class Contact extends Component {
     state = { 
@@ -106,9 +108,20 @@ class Contact extends Component {
 
 
 
-    render() { 
+    render() {         
         return ( 
-        <>
+        <div className="contact__wrap">
+            <div className="about">
+                <h3>Celek.pl</h3>
+                <p>Migdałowa 21 62-800 Kalisz</p>
+                <p>791 090 708</p>
+                <p>g.celek@gmail.com</p>
+                <p>NIP 8942911622</p>
+                <div className='about__map'><Mapa /></div>
+
+
+
+            </div>
             <form className="contactForm" onSubmit={this.handleSubmit} noValidate>
                 <h3 className='contactForm__title'>Napisz do nas !</h3>
                 <label className='contactForm__label' htmlFor="username"> Imię : <br/>
@@ -132,7 +145,7 @@ class Contact extends Component {
             when={!this.state.isEmpty}
             message="Masz niewypełniony formularz. Czy na pewno chcesz opuścić tę stronę"
             />
-        </>
+        </div>
          );
     }
 }

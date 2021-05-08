@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/LoginMenu.css'
 import {users} from '../pages/UserAccount'
+import {Link} from 'react-router-dom'
 
 class LoginMenu extends Component {
     
@@ -87,6 +88,8 @@ class LoginMenu extends Component {
             this.props.click()
 
             this.props.user(validation.userData)
+
+
         } else {
           this.setState({
             errors: {
