@@ -5,18 +5,18 @@ import {users} from '../pages/UserAccount'
 class Ordered extends Component {
     state = {  }
 
-    // kupione = () => {
-    //     const boughtItems = orders
-    //     users.map(item => {if(this.props.activeUser.login === item.login) return 
-    //         item.bought=[1,2,3];
-    //         console.log(item.bought)
-    //     })
-    // }
+    kupione = () => {
+        const boughtItems = orders
+        users.map(item => {if(this.props.activeUser.login === item.login) return 
+            item.bought=[1,2,3];
+            console.log(item.bought)
+        })
+    }
 
     componentDidMount(){
         this.props.step(5)
-        // this.kupione()
-        // orders.splice(0,orders.length)
+        this.kupione()
+        orders.splice(0,orders.length)
         // console.log(users)
     }
 
