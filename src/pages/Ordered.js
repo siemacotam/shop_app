@@ -6,18 +6,26 @@ class Ordered extends Component {
     state = {  }
 
     kupione = () => {
-        const boughtItems = orders
-        users.map(item => {if(this.props.activeUser.login === item.login) return 
-            item.bought=[1,2,3];
-            console.log(item.bought)
+
+        const today = Date.now();
+        let date = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(today)
+        console.log(date); 
+
+        const user =users.filter(item => {if(this.props.activeUser.login === item.login) return item
+            item.bought = [...orders]
+  
         })
+        const order = [...orders]
+        user[0].bought.push(order)
+        user[0].date.push(date)
+
+
     }
 
     componentDidMount(){
         this.props.step(5)
         this.kupione()
         orders.splice(0,orders.length)
-        // console.log(users)
     }
 
     render() { 

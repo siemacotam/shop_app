@@ -16,6 +16,7 @@ export const users = [
       postcode: 62800,
       phone: 123456789,
       bought: [],
+      date: [],
     },
     {
       login: 'adminadmin',
@@ -29,6 +30,7 @@ export const users = [
       postcode: 62800,
       phone: 791090708,
       bought: [],
+      date: [],
     }
   ]
 
@@ -36,8 +38,16 @@ class UserAccount extends Component {
     state = {  }
 
 
-    render() { 
+    render() {     
 
+
+     const user = users.filter(item => {if(this.props.activeUser.login === item.login) return item.login})
+     const userOrders = user[0].bought
+     console.log(userOrders)
+     
+
+     let number = 1
+     let dateNumber = 0
 
         return ( 
             <div className='userPanel'>
@@ -49,7 +59,15 @@ class UserAccount extends Component {
 
                 <p>{this.props.activeUser.login}{this.props.activeUser.email}{this.props.activeUser.city}{this.props.activeUser.surname}</p>
                 <p>Twoje zamówienia</p>
-                <p>liczba zamówień </p>
+                <p>liczba zamówień {userOrders.length}</p>
+                <p>{
+                  userOrders.map(item => {return <div className='ordersWrap'> <p>{number++}</p>  <p>{item.map(i=>i.price).reduce((a, b) => a + b)}</p> <div>{item.map(i => {return (
+                    <div className='ordered'>
+                      <p>{i.name }</p>
+                      <p>{i.price}</p>
+                    </div> )} )} </div>
+                    <p>data zamówienia {user[0].date[dateNumber++]}</p> </div> })
+                  }</p>
 
               
 

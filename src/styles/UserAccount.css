@@ -3,6 +3,14 @@
     padding: 30px;
 }
 
+.ordersWrap {
+    display: flex;
+}
+
 .userPanel p {
     padding: 30px;
+}
+
+.ordered {
+    display: flex;
 }
