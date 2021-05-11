@@ -67,8 +67,15 @@ const Blog = () => {
         )
 
     return ( 
-        <div className='articles'>
-            {articles}
+        <div>
+            <div>
+                <img src="" alt="" />
+                <h3>O nas</h3>
+                <p>Firma zajmująca sie wszystkim i niczym</p>
+            </div>
+            <div className='articles'>
+                {articles}
+            </div>
         </div>
      );
 }
