@@ -72,6 +72,7 @@ const Blog = () => {
                 <img src="" alt="" />
                 <h3>O nas</h3>
                 <p>Firma zajmująca sie wszystkim i niczym</p>
+                <p>jestesmy najlepsi</p>
             </div>
             <div className='articles'>
                 {articles}
