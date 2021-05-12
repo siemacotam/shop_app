@@ -10,8 +10,9 @@ class Search extends Component {
      }
 
     handleChange = (e) => {
+            let value = e.target.value.toLowerCase()
             this.setState({
-                value: e.target.value,
+                value: value,
             })
         }
 

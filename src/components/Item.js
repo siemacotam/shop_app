@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 const tv = [
     {
         name: 'tv 1',
-        img: './shop_app/images/tv1.jpg',
+        img: '../images/tv1.jpg',
         txt: 'fajne tanie auto kupujcie ludzie',
         price: 30000,
         amount: '1',
@@ -15,7 +15,7 @@ const tv = [
     },
     {
         name: 'tv 2',
-        img: './shop_app/images/tv2.jpg',
+        img: '../images/tv2.jpg',
         txt: 'fajne tanie auto kupujcie ludzie',
         price: 3540000,
         amount: '1',
@@ -23,7 +23,7 @@ const tv = [
     },
     {
         name: 'tv 3',
-        img: './shop_app/images/tv3.jpg',
+        img: '../images/tv3.jpg',
         txt: 'fajne tanie auto kupujcie ludzie',
         price: 340000,
         amount: '1',

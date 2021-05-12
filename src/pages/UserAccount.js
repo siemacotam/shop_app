@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../styles/UserAccount.css'
 import {Link} from 'react-router-dom'
+import UserPanel from '../pages/UserPanel'
 
 
-export const users = [
+export let users = [
     {
       login: 'user1',
       password: '123456',
@@ -37,43 +38,68 @@ export const users = [
 class UserAccount extends Component {
     state = {  }
 
+    getIndex = (login) => {
+      return users.findIndex(obj => obj.login === this.props.activeUser.login);
+  }
+
+
+  
 
     render() {     
-
-
-     const user = users.filter(item => {if(this.props.activeUser.login === item.login) return item.login})
-     const userOrders = user[0].bought
-     console.log(userOrders)
-     
-
+      const userIndex = this.getIndex()
      let number = 1
      let dateNumber = 0
 
-        return ( 
-            <div className='userPanel'>
-                <h1>Witaj {this.props.activeUser.name} :) </h1>
-                <p>Dane użytkownika</p>
+     return ( 
+      <div className='userPanel'>
+          <h1>Witaj {users[userIndex].login} :) </h1>
+          <p>Dane użytkownika</p>
+          <UserPanel activeUser={this.props.activeUser}/>
+          <p>Twoje zamówienia ({users[userIndex].bought.length})</p>
+        <div>
+          <div>{ users[userIndex].bought.length === 0 ? <p>brak zamówień</p> :
+          users[userIndex].bought.map(item =>  
+          <div>
+            <p>{number++}</p><p>data zamówienia {users[userIndex].date[dateNumber++]}</p><p>{item.map(i => i.price).reduce((a, b) => a + b)}</p>
+            <div>{item.map(i => {return (
+              <div className='ordered'>
+                <p>{i.name }</p>
+                <p>{i.price}</p>
+              </div> )} )} </div>
+          </div>
+          
+          )}</div> 
+        </div>
+        
 
+          <button onClick={this.props.unlogged} > <Link to={'/'}>wyloguj</Link></button>
+      </div>
+   );
 
-
-
-                <p>{this.props.activeUser.login}{this.props.activeUser.email}{this.props.activeUser.city}{this.props.activeUser.surname}</p>
-                <p>Twoje zamówienia</p>
-                <p>liczba zamówień {userOrders.length}</p>
-                <p>{
-                  userOrders.map(item => {return <div className='ordersWrap'> <p>{number++}</p>  <p>{item.map(i=>i.price).reduce((a, b) => a + b)}</p> <div>{item.map(i => {return (
-                    <div className='ordered'>
-                      <p>{i.name }</p>
-                      <p>{i.price}</p>
-                    </div> )} )} </div>
-                    <p>data zamówienia {user[0].date[dateNumber++]}</p> </div> })
-                  }</p>
+        // return ( 
+        //     <div className='userPanel'>
+        //         <h1>Witaj {this.props.activeUser.name} :) </h1>
+        //         <p>Dane użytkownika</p>
+        //         <UserPanel activeUser={this.props.activeUser}/>
+        //         <p>Twoje zamówienia</p>
+        //         <p>{ userOrders.map(item => {return <div className='ordersWrap'> 
+        //         siema
+        //         <p>{number++}</p> 
+        //          <p>{item.map(i=>i.price).reduce((a, b) => a + b)}</p> 
+        //          <div>{item.map(i => {return (
+        //             <div className='ordered'>
+        //               <p>{i.name }</p>
+        //               <p>{i.price}</p>
+        //             </div> )} )} </div>
+        //             <p>data zamówienia {user[0].date[dateNumber++]}</p> 
+        //             </div> })
+        //           }</p>
 
               
 
-                <button onClick={this.props.unlogged} > <Link to={'/'}>wyloguj</Link></button>
-            </div>
-         );
+        //         <button onClick={this.props.unlogged} > <Link to={'/'}>wyloguj</Link></button>
+        //     </div>
+        //  );
     }
 }
  

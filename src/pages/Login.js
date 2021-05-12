@@ -3,6 +3,8 @@ import LoginMenu from './LoginMenu'
 import '../styles/Login.css'
 import {users} from './UserAccount'
 import {Link} from 'react-router-dom'
+import {activeUserIndex, changeActive} from '../pages/LoginMenu'
+
 
 class Login extends Component {
     state = { 
@@ -50,6 +52,10 @@ class Login extends Component {
         postcode_incorrect: ' kod musi składać sie z min 3 znaków',
         phone_incorrect: ' Numer musi sie skladac z min 9 cyfr',
       }
+
+      getIndex = (login) => {
+        return users.findIndex(obj => obj.login === this.state.login);
+    }
 
      formValidation = () => {
         let login = false;
@@ -171,7 +177,6 @@ class Login extends Component {
           const newUser = {
             login: this.state.login,
             password: this.state.password,
-            password2: this.state.password2,
             name: this.state.name,
             surname:this.state.surname,
             email:this.state.email,
@@ -180,10 +185,15 @@ class Login extends Component {
             city: this.state.city,
             postcode: this.state.postcode,
             phone: this.state.phone,
+            bought: [],
+            date: [],
           }
           users.push(newUser);
           this.props.logged()
           this.props.user(newUser)
+
+          const number = this.getIndex()
+          changeActive(number)
           
         } else {
           this.setState({

@@ -4,6 +4,7 @@ import {users} from '../pages/UserAccount'
 import '../styles/Summary.css'
 import {Link} from 'react-router-dom'
 import {selectedPaymentMethod} from '../pages/Payment'
+import {activeUserIndex} from '../pages/LoginMenu'
 
 class Summary extends Component {
     state = {  }
@@ -26,6 +27,7 @@ class Summary extends Component {
     }
 
     render() { 
+        console.log(users)
 
         const orderList = orders.map(item => 
             <li className='orderElement' key={item.name}>
@@ -49,9 +51,9 @@ class Summary extends Component {
                </div>
                <div className="summary__orderDetails">
                    <p className='summary__text summary__text--bold summary__text--border'>Adres dostawy :</p>
-                   <p>{this.props.activeUser.name} {this.props.activeUser.surname}</p>
-                    <p>{this.props.activeUser.adress} {this.props.activeUser.adressNumber}</p>
-                    <p>{this.props.activeUser.postcode} {this.props.activeUser.city}</p>
+                   <p>{users[activeUserIndex].name} {users[activeUserIndex].surname}</p>
+                    <p>{users[activeUserIndex].adress} {users[activeUserIndex].adressNumber}</p>
+                    <p>{users[activeUserIndex].postcode} {users[activeUserIndex].city}</p>
                     <p className='summary__text summary__text--bold summary__text--border' >Adres rachunku :</p>
                     <p>Taki sam jak dostawy</p>
                     <p className='summary__text summary__text--bold summary__text--border'>Metoda płatności: </p>

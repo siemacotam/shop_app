@@ -41,7 +41,7 @@ handleClick = () => {
       <Router basename={process.env.PUBLIC_URL}>
           <div className='App'>
             <header>
-                {<Panel user ={this.handleActiveUser} isLoggedIn = {this.state.isLoggedIn} logged ={this.logged} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
+                {<Panel user ={this.handleActiveUser} isLoggedIn = {this.state.isLoggedIn} logged ={this.logged} isClicked={this.state.isClicked} handleClick={this.handleClick} activeUser={this.state.activeUser}/>}
             </header>
             <aside>
                 {<Banner />}

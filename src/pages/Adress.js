@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import '../styles/Adress.css'   
 import {users} from '../pages/UserAccount'
 import {Link} from 'react-router-dom'
+import {activeUserIndex} from '../pages/LoginMenu'
 
 class Adress extends Component {
     state = { 
-        phone: this.props.activeUser.phone
+        phone: users[activeUserIndex].phone
      }
 
      handleSubmit = (e) => {
@@ -16,7 +17,7 @@ class Adress extends Component {
          })
 
 
-         users.map(item => {if(this.props.activeUser.login === item.login) return item.phone = this.state.phone})
+         users.map(item => {if(users[activeUserIndex].login === item.login) return item.phone = this.state.phone})
      }
 
      handleChange= (e) => {
@@ -38,9 +39,9 @@ class Adress extends Component {
                     <p className='checkoutMenu__adressTitle'>
                         Adres dostawy
                     </p>
-                    <p>{this.props.activeUser.name} {this.props.activeUser.surname}</p>
-                    <p>{this.props.activeUser.adress} {this.props.activeUser.adressNumber}</p>
-                    <p>{this.props.activeUser.postcode} {this.props.activeUser.city}</p>
+                    <p>{users[activeUserIndex].name} {users[activeUserIndex].surname}</p>
+                    <p>{users[activeUserIndex].adress} {users[activeUserIndex].adressNumber}</p>
+                    <p>{users[activeUserIndex].postcode} {users[activeUserIndex].city}</p>
                 </div>
                 <div className='checkoutMenu__adressElement'>
                 <p className='checkoutMenu__adressTitle'>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {orders} from '../pages/ShoppingCart'
 import {users} from '../pages/UserAccount'
+import {activeUserIndex} from '../pages/LoginMenu'
 
 class Ordered extends Component {
     state = {  }
@@ -9,15 +10,15 @@ class Ordered extends Component {
 
         const today = Date.now();
         let date = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(today)
-        console.log(date); 
 
-        const user =users.filter(item => {if(this.props.activeUser.login === item.login) return item
-            item.bought = [...orders]
-  
+        const user =users.filter(item => {if(users[activeUserIndex].login === item.login) return item
         })
         const order = [...orders]
         user[0].bought.push(order)
         user[0].date.push(date)
+        // users[activeUserIndex].push(order)
+        // users[activeUserIndex].push(date)
+ 
 
 
     }

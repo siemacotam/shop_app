@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import '../styles/LoginMenu.css'
 import {users} from '../pages/UserAccount'
-import {Link} from 'react-router-dom'
+
+export let activeUserIndex = null;
+export const changeActive = (number) => {activeUserIndex = number}
 
 class LoginMenu extends Component {
     
@@ -22,6 +24,10 @@ class LoginMenu extends Component {
         password_incorrect: ' Hasło musi posiadać min 3 znaków i nie może zawierać przerwy',
         loginPass_incorrect: 'Login lub hasło nieprawidłowe'
       }
+
+      getIndex = (login) => {
+        return users.findIndex(obj => obj.login === this.state.username);
+    }
 
     
       handleChange = (e) => {
@@ -88,6 +94,11 @@ class LoginMenu extends Component {
             this.props.click()
 
             this.props.user(validation.userData)
+
+            const number = this.getIndex()
+            activeUserIndex = number
+
+            console.log(activeUserIndex)
 
 
         } else {

@@ -72,7 +72,7 @@ class Panel extends Component{
                         </li>}
                 </ul>
             </nav> 
-            {this.props.isClicked ? <LoginMenu user={this.props.user} logged ={this.props.logged} click={this.props.handleClick}/> : null}
+            {this.props.isClicked ? <LoginMenu  activeUser={this.state.activeUser} user={this.props.user} logged ={this.props.logged} click={this.props.handleClick}/> : null}
         </>
         )};
 }
