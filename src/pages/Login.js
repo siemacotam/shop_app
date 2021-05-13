@@ -3,7 +3,7 @@ import LoginMenu from './LoginMenu'
 import '../styles/Login.css'
 import {users} from './UserAccount'
 import {Link} from 'react-router-dom'
-import {activeUserIndex, changeActive} from '../pages/LoginMenu'
+import {changeActive} from '../pages/LoginMenu'
 
 
 class Login extends Component {

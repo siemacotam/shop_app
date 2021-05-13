@@ -1,0 +1,30 @@
+.userPanel {
+    width: 100%;
+}
+
+.userPanel__form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.userPanel__user {
+    flex-basis: 40%;
+}
+
+.userPanel__adress {
+    flex-basis: 40%;
+}
+
+.userPanel__button {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userPanel__input {
+    padding: 5px;
+    width: 90%;
+}

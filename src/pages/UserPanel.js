@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {users} from '../pages/UserAccount'
 import {activeUserIndex} from '../pages/LoginMenu'
+import '../styles/UserPanel.css'
 
 class UserPanel extends Component {
 
@@ -53,6 +54,8 @@ class UserPanel extends Component {
             users.splice(userIndex, 0 ,newUser)
 
             console.log(users)
+
+            this.props.handleChangeClick()
     }
 
 
@@ -76,19 +79,25 @@ class UserPanel extends Component {
     render() { 
 
         return ( 
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" disabled name='login' placeholder={users[this.userIndex].login} onChange={this.handleChange} value={this.state.login}/>
-                    <input type="text" name='name' placeholder={users[this.userIndex].name} onChange={this.handleChange} value={this.state.name}/> 
-                    <input type="text" name='surname' placeholder={users[this.userIndex].surname} onChange={this.handleChange} value={this.state.surname}/> 
-                    <input type="text" name='phone' placeholder={users[this.userIndex].phone} onChange={this.handleChange} value={this.state.phone}/> 
-                    <input type="text" name='email' placeholder={users[this.userIndex].email} onChange={this.handleChange} value={this.state.email}/> 
-                    <input type="text" name='adress' placeholder={users[this.userIndex].adress} onChange={this.handleChange} value={this.state.adress}/> 
-                    <input type="text" name='adressNumber' placeholder={users[this.userIndex].adressNumber} onChange={this.handleChange} value={this.state.adressNumber}/> 
-                    <input type="text" name='city' placeholder={users[this.userIndex].city} onChange={this.handleChange} value={this.state.city}/> 
-                    <input type="text" name='password' placeholder={users[this.userIndex].password} onChange={this.handleChange} value={this.state.password}/> 
-                    <input type="text" name='password2' placeholder={users[this.userIndex].password2} onChange={this.handleChange} value={this.state.password2}/> <button>zmień</button>
+            <div className='userPanel'>
+                <form onSubmit={this.handleSubmit} className='userPanel__form'>
+                    <div className="userPanel__user">
+                        <input className='userPanel__input' type="text" disabled name='login' placeholder={users[this.userIndex].login} onChange={this.handleChange} value={this.state.login}/> <br />
+                        <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='name' placeholder={users[this.userIndex].name} onChange={this.handleChange} value={this.state.name}/> <br />
+                        <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='surname' placeholder={users[this.userIndex].surname} onChange={this.handleChange} value={this.state.surname}/> <br />
+                        <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='phone' placeholder={users[this.userIndex].phone} onChange={this.handleChange} value={this.state.phone}/> <br />
+                        <input className='userPanel__input'  disabled={!this.props.changeData} type="text" name='email' placeholder={users[this.userIndex].email} onChange={this.handleChange} value={this.state.email}/> 
+                    </div>
+                    <div className="userPanel__adress">
+                        <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='adress' placeholder={users[this.userIndex].adress} onChange={this.handleChange} value={this.state.adress}/> <br />
+                        <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='adressNumber' placeholder={users[this.userIndex].adressNumber} onChange={this.handleChange} value={this.state.adressNumber}/> <br />
+                        <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='city' placeholder={users[this.userIndex].city} onChange={this.handleChange} value={this.state.city}/> <br />
+                        <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='password' placeholder={users[this.userIndex].password} onChange={this.handleChange} value={this.state.password}/> <br />
+                        <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='password2' placeholder={users[this.userIndex].password2} onChange={this.handleChange} value={this.state.password2}/> <br />
+                    </div>
+                    <div className='userPanel__button'>{this.props.changeData ? <button>zmień</button>: null }</div>
                 </form>
+                {this.props.changeData ? null : <button onClick={this.props.handleChangeClick}>Edytuj dane</button>}
             </div>
          );
     }

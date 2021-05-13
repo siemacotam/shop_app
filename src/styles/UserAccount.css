@@ -1,16 +1,33 @@
-.userPanel {
+.userAccount {
     text-align: center;
     padding: 30px;
+    width: 90%;
 }
 
 .ordersWrap {
     display: flex;
 }
 
-.userPanel p {
+.userAccount p {
     padding: 30px;
 }
 
 .ordered {
     display: flex;
+}
+
+.userAccount__text {
+    padding: 5px;
+}
+
+.text {
+
+}
+
+.text--bold {
+    font-weight: bold;
+}
+
+.text--medium {
+    font-size: 20px;
 }

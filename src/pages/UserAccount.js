@@ -36,13 +36,27 @@ export let users = [
   ]
 
 class UserAccount extends Component {
-    state = {  }
+    state = { 
+      showData: false,
+      changeData: false,
+     }
 
     getIndex = (login) => {
       return users.findIndex(obj => obj.login === this.props.activeUser.login);
   }
 
 
+  handleChangeClick = () => {
+    this.setState({
+      changeData: !this.state.changeData
+    })
+  }
+
+  handleShowClick = () => {
+    this.setState({
+      showData: !this.state.showData
+    })
+  }
   
 
     render() {     
@@ -51,11 +65,12 @@ class UserAccount extends Component {
      let dateNumber = 0
 
      return ( 
-      <div className='userPanel'>
+      <div className='userAccount'>
           <h1>Witaj {users[userIndex].login} :) </h1>
-          <p>Dane użytkownika</p>
-          <UserPanel activeUser={this.props.activeUser}/>
-          <p>Twoje zamówienia ({users[userIndex].bought.length})</p>
+          <p className='userAccount__text text text--bold text--medium'>Dane użytkownika</p>
+          <button onClick={this.handleShowClick}>pokaż /edytuj</button>
+          {this.state.showData ? <UserPanel handleChangeClick={this.handleChangeClick} changeData={this.state.changeData} activeUser={this.props.activeUser}/> : null}
+          <p className='userAccount__text text text--bold text--medium'>Twoje zamówienia ({users[userIndex].bought.length})</p>
         <div>
           <div>{ users[userIndex].bought.length === 0 ? <p>brak zamówień</p> :
           users[userIndex].bought.map(item =>  
@@ -75,31 +90,6 @@ class UserAccount extends Component {
           <button onClick={this.props.unlogged} > <Link to={'/'}>wyloguj</Link></button>
       </div>
    );
-
-        // return ( 
-        //     <div className='userPanel'>
-        //         <h1>Witaj {this.props.activeUser.name} :) </h1>
-        //         <p>Dane użytkownika</p>
-        //         <UserPanel activeUser={this.props.activeUser}/>
-        //         <p>Twoje zamówienia</p>
-        //         <p>{ userOrders.map(item => {return <div className='ordersWrap'> 
-        //         siema
-        //         <p>{number++}</p> 
-        //          <p>{item.map(i=>i.price).reduce((a, b) => a + b)}</p> 
-        //          <div>{item.map(i => {return (
-        //             <div className='ordered'>
-        //               <p>{i.name }</p>
-        //               <p>{i.price}</p>
-        //             </div> )} )} </div>
-        //             <p>data zamówienia {user[0].date[dateNumber++]}</p> 
-        //             </div> })
-        //           }</p>
-
-              
-
-        //         <button onClick={this.props.unlogged} > <Link to={'/'}>wyloguj</Link></button>
-        //     </div>
-        //  );
     }
 }
  
