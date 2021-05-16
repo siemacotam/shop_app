@@ -24,13 +24,15 @@
 .product__img {
     object-fit: cover;
     height: 100%;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     overflow: hidden;
-    transition: .5s;
+    flex-basis: 40%;
 }
 
 .product__description {
     padding: 10px;
+    flex-grow: 1;
 }
 
 .product__price {

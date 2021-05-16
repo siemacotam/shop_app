@@ -53,6 +53,7 @@ const data = [
     },
 
 ]
+
 const Blog = () => {
 
     const articles = data.map(article => 
@@ -77,7 +78,7 @@ const Blog = () => {
             <div className='articles'>
                 {articles}
             </div>
-        </div>
+    </div>
      );
 }
  

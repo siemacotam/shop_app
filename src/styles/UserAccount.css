@@ -8,10 +8,6 @@
     display: flex;
 }
 
-.userAccount p {
-    padding: 30px;
-}
-
 .ordered {
     display: flex;
 }
@@ -30,4 +26,60 @@
 
 .text--medium {
     font-size: 20px;
+}
+
+.userAccount__orderElement {
+    display: flex;
+    background-color: white;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.userAccount__orderElement:nth-of-type(1){
+    background-color: grey;
+    color: white;
+    border: 0px solid black;
+}
+
+.userAccount__orderElement :nth-last-child(5){
+    flex-basis: 10%;
+}
+.userAccount__orderElement :nth-last-child(4){
+    flex-basis: 20%;
+}
+.userAccount__orderElement :nth-last-child(3){
+    flex-basis: 20%;
+}
+.userAccount__orderElement :nth-last-child(2){
+    flex-basis: 40%;
+}
+.userAccount__orderElement :nth-last-child(1){
+    flex-basis: 10%;
+    border: 0px solid black;
+}
+
+.userAccount__orderElement * {
+    margin: 0;    
+    border-right: 1px solid black;
+    padding: 10px;
+}
+.ordered {
+    border: 0px solid black;
+}
+.ordered p:nth-child(1){
+    flex-basis: 70%;
+    border: 0px solid black;
+}
+.ordered p:nth-child(2){
+    flex-basis: 30%;
+    border: 0px solid black;
+}
+
+.userAccount__orderElement {
+    border-right: 7px solid black;
 }

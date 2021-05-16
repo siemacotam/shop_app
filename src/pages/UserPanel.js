@@ -42,8 +42,8 @@ class UserPanel extends Component {
                 city: this.state.city,
                 postcode: this.state.postcode,
                 phone: this.state.phone,
-                bought: [],
-                date: [],
+                bought: users[this.userIndex].bought,
+                date: users[this.userIndex].date,
               }
               
             console.log(newUser)
@@ -95,7 +95,7 @@ class UserPanel extends Component {
                         <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='password' placeholder={users[this.userIndex].password} onChange={this.handleChange} value={this.state.password}/> <br />
                         <input className='userPanel__input' disabled={!this.props.changeData} type="text" name='password2' placeholder={users[this.userIndex].password2} onChange={this.handleChange} value={this.state.password2}/> <br />
                     </div>
-                    <div className='userPanel__button'>{this.props.changeData ? <button>zmień</button>: null }</div>
+                    <div className='userPanel__button'>{this.props.changeData ? <button >zmień</button>: null }</div>
                 </form>
                 {this.props.changeData ? null : <button onClick={this.props.handleChangeClick}>Edytuj dane</button>}
             </div>
@@ -104,4 +104,3 @@ class UserPanel extends Component {
 }
  
 export default UserPanel;
-<div></div>

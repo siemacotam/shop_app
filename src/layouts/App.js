@@ -2,7 +2,6 @@ import '../styles/App.css';
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Panel from './Panel';
-import Banner from './Banner';
 import Footer from './Footer';
 import Page from './Page'
 
@@ -43,9 +42,6 @@ handleClick = () => {
             <header>
                 {<Panel user ={this.handleActiveUser} isLoggedIn = {this.state.isLoggedIn} logged ={this.logged} isClicked={this.state.isClicked} handleClick={this.handleClick} activeUser={this.state.activeUser}/>}
             </header>
-            <aside>
-                {<Banner />}
-            </aside>
             <section className="page">
                 {<Page activeUser={this.state.activeUser} user ={this.handleActiveUser} logged ={this.logged} unlogged ={this.unlogged} isLoggedIn = {this.state.isLoggedIn} isClicked={this.state.isClicked} handleClick={this.handleClick}/>}
               </section>

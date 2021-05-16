@@ -34,7 +34,6 @@ class ShoppingCart extends Component {
      }
 
      componentDidMount() {
-        window.scrollTo(0,400)
         setInterval(() => {
             this.setState({
                 isLoggedIn: this.props.isLoggedIn,
@@ -49,7 +48,7 @@ class ShoppingCart extends Component {
                 <div className='orderElement__imgWrap' ><img className='orderElement__img' src={item.img} alt=""/></div>
                 <p className='orderElement__name orderElement__text' >{item.name}</p>
                 <p className='orderElement__number orderElement__text' >ilość : {item.amount}</p>
-                <p className='orderElement__price orderElement__text' >{item.price * item.amount}</p>
+                <p className='orderElement__price orderElement__text' >{item.price * item.amount} zł</p>
                 <button className='orderElement__button btn btn-danger' id={item.name} onClick ={this.handleClick}>x</button>
             </li> )
 
@@ -78,18 +77,18 @@ class ShoppingCart extends Component {
                     <h3 className='shoppingCart__title'>Do zapłaty</h3>
                     <div className='shoppingCart__values'>
                         <p className='shoppingCart__details' >Wartość produktów</p>
-                        <p className='shoppingCart__detailsValue'> {this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</p>
+                        <p className='shoppingCart__detailsValue'> {this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b)  : 0 } zł</p>
                         <p className='shoppingCart__details'>Przesyłka</p>
-                        <p className='shoppingCart__detailsValue'>{orders.length >0 ? deliveryPrice : 0}</p>
+                        <p className='shoppingCart__detailsValue'>{orders.length >0 ? deliveryPrice : 0} zł</p>
                     </div>
                     <div className='shoppingCart__values'>
                         <p className='shoppingCart__details'>Do zapłaty (w tym VAT)</p>
-                        <p className='shoppingCart__detailsValue'>{this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) + deliveryPrice : 0 }</p>
+                        <p className='shoppingCart__detailsValue'>{this.state.orderItems.length > 0 ? (this.state.orderItems.map(item=>item.price)).reduce((a, b) => a + b) + deliveryPrice : 0 } zł</p>
                     </div>
 
-                {orders.length > 0? <Link to ={'/checkout'} exact ><button className='shoppingCart__button btn btn-success'>
+                {orders.length > 0? <button className='shoppingCart__button btn btn-success'>
                     {this.state.isLoggedIn ? <Link to ='/checkout/adress'> przejdź do kasy </Link> : <Link to ='/checkout/login'> przejdź do kasy </Link>}
-                    </button></Link> : <button className='shoppingCart__button btn btn-success' disabled>Koszyk jest pusty</button> } 
+                    </button> : <button className='shoppingCart__button btn btn-success' disabled>Koszyk jest pusty</button> } 
                 </div>
                 <div className="shoppingCart__flexStart">
                     <div className="shoppingCart__termin">

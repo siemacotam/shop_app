@@ -76,7 +76,8 @@
 }
 
 .shoppingCart__button {
-    margin: 30px;
+    /* margin: 30px; */
+    padding: 0;
     transition: .3s;
 }
 

@@ -35,7 +35,7 @@ const items = data.map(item =>
     </Link>
 </div> )
 
-    window.scrollTo(0,400)
+    window.scrollTo(0,0)
 
     return ( 
         <>

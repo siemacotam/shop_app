@@ -102,11 +102,6 @@ class Contact extends Component {
         })
      }
 
-     componentDidMount() {
-        window.scrollTo(0,400)
-      }
-
-
 
     render() {         
         return ( 

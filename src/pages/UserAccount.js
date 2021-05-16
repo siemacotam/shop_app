@@ -72,15 +72,32 @@ class UserAccount extends Component {
           {this.state.showData ? <UserPanel handleChangeClick={this.handleChangeClick} changeData={this.state.changeData} activeUser={this.props.activeUser}/> : null}
           <p className='userAccount__text text text--bold text--medium'>Twoje zamówienia ({users[userIndex].bought.length})</p>
         <div>
-          <div>{ users[userIndex].bought.length === 0 ? <p>brak zamówień</p> :
-          users[userIndex].bought.map(item =>  
           <div>
-            <p>{number++}</p><p>data zamówienia {users[userIndex].date[dateNumber++]}</p><p>{item.map(i => i.price).reduce((a, b) => a + b)}</p>
+            
+          <div className='userAccount__orderElement'>
+            <p>numer zamówienia</p>
+            <p>data zamówienia</p>
+            <p>kwota zamówienia</p>
+          <div>
+            <div className='ordered'>
+              <p>zamówienie</p>
+              <p>cena</p>
+            </div> </div>
+            <p>status zamówienia:</p>
+          </div>
+
+
+            { users[userIndex].bought.length === 0 ? <p>brak zamówień</p> :
+        
+          users[userIndex].bought.map(item =>  
+          <div className='userAccount__orderElement'>
+            <p>{number++}</p><p> {users[userIndex].date[dateNumber++]}</p><p>{item.map(i => i.price).reduce((a, b) => a + b)}</p>
             <div>{item.map(i => {return (
               <div className='ordered'>
                 <p>{i.name }</p>
                 <p>{i.price}</p>
               </div> )} )} </div>
+              <p> opłacono / w realizacji</p>
           </div>
           
           )}</div> 

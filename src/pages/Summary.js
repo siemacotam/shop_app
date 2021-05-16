@@ -34,7 +34,7 @@ class Summary extends Component {
                 <div className='orderElement__imgWrap' ><img className='orderElement__img' src={item.img} alt=""/></div>
                 <p className='orderElement__name orderElement__text' >{item.name}</p>
                 <p className='orderElement__number orderElement__text' >ilość : {item.amount}</p>
-                <p className='orderElement__price orderElement__text' >{item.price * item.amount}</p>
+                <p className='orderElement__price orderElement__text' >{item.price * item.amount} zł</p>
                 <button className='orderElement__button btn btn-danger' id={item.name} onClick ={this.handleClick}>x</button>
             </li> )
 
@@ -74,7 +74,7 @@ class Summary extends Component {
                     </div>
                     <div className='summary_flex'>
                    <p className='summary__text summary__text--bold'>Do zapłaty</p>
-                   <p>{orders.length > 0 ? (orders.map(item=>item.price)).reduce((a, b) => a + b) : 0 }</p>
+                   <p>{orders.length > 0 ? (orders.map(item=>item.price)).reduce((a, b) => a + b) : 0 } zł</p>
                    </div>
                    <p>Składając zamówienie na Celek.pl, akceptujesz Postanowienia Polityki Prywatności, Regulamin oraz zasady odstąpienia od umowy. Potwierdzasz także, że ten zakup jest przeznaczony wyłącznie do użytku osobistego. Możemy okazjonalnie wysyłać do Ciebie wiadomości e-mail z rekomendacjami dotyczącymi produktów. Nie przejmuj się, możesz w każdym momencie zrezygnować z subskrybcji, klikając w link w wiadomości e-mail.</p>
                    <Link to='/checkout/paymentmethod'><button className='summary__button btn btn-success'>Potwierdź i zapłać wybraną metodą</button></Link> 

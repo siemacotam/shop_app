@@ -63,7 +63,7 @@ class Payment extends Component {
                 </div></div>
                 <div className='pament__summary'>
                     <p>przesyłka</p>  <p>10 zł</p>
-                    <p>łączna kwota</p> <p>{orders.length > 0 ? (orders.map(item=>item.price)).reduce((a, b) => a + b) + 10 : 0 }</p>
+                    <p>łączna kwota</p> <p>{orders.length > 0 ? (orders.map(item=>item.price)).reduce((a, b) => a + b) + 10 : 0 } zł</p>
                     <Link to='/checkout/summary'>
                 {/* {this.state.value === 'Karta Płatnicza' ? null : */}
                 <button disabled={this.state.value == 1} onClick={() => {this.props.step(4)}}> Dalej</button>

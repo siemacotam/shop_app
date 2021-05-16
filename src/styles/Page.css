@@ -4,8 +4,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px 0;
     position: relative;
+    margin-top: 8vh;
 }
 
 .page__bg{

@@ -28,10 +28,6 @@ class Search extends Component {
         })
     }
 
-    componentDidMount() {
-        window.scrollTo(0,400)
-      }
-
     render() { 
         const data = products.filter(item => {return !( item.name.indexOf(`${this.state.value}`))})
         const data2 = products.filter(item => {return ( item.name.indexOf(`${this.state.value}`))})
