@@ -32,7 +32,7 @@ const data = this.props.data
                         <option value="5">5</option>
                     </select>
                 </label>
-                <p className='product__price'>cena : {item.price * item.amount}</p>
+                <p className='product__price'>cena : {item.price * item.amount} zł</p>
                 <button id={item.name} type="button" className="product__button btn btn-success" 
                 onClick={ (e) =>{ 
                 const buttonId = e.target.id

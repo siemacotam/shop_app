@@ -7,7 +7,12 @@
 
 body {
   min-height: 100vh;
-  background: rgba(0,0,0,0.1)
+  background: rgba(0,0,0,0.1);
+  width: 100vw;
+}
+
+body {
+  background-color: rgba(0,0,0,0.2);
 }
 
 .App {
@@ -15,7 +20,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0 auto;
-  width: 90vw;
+  width: 95%;
 }
 
 .input{
@@ -31,4 +36,13 @@ a {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2px 5px;
+  margin-top: 2px;
 }

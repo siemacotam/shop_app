@@ -50,6 +50,6 @@
 
 @media (max-width: 576px){
     .item {
-        flex-basis: 70%;
+        flex-basis: 80%;
     }
 }

@@ -24,6 +24,7 @@ class Summary extends Component {
 
     componentDidMount(){
         this.props.step(4)
+        window.scrollTo(0,0)
     }
 
     render() { 

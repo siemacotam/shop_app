@@ -138,3 +138,68 @@ padding: 10px;
     background-color: grey;
     padding: 10px;
 }
+
+@media (max-width: 576px){
+    .shoppingCart {
+        width: 95%;
+        flex-wrap: wrap;
+    }
+    
+    .shoppingCart__orders {
+        background-color: white;
+        flex-basis: 95%;
+        margin: 10px auto;
+    }
+    
+    .shoppingCart__summary{
+        flex-basis: 95%;
+        margin: 0 auto;
+    }
+    
+    .shoppingCart__title {
+        font-size: 30px;
+    }
+    
+    .orderElement {
+        justify-content: space-around;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin-bottom: 10px;
+        background-color: rgba(100,100,100,0.6);
+        height: 10vh;
+        transition: .3s;
+    }
+    
+    .orderElement__text {
+     font-size: 12px;
+    }
+    
+    .shoppingCart__button {
+        margin: 5px;
+        font-size: 15px;
+    }
+    
+    .shoppingCart__details {
+        flex-basis: 50%;
+    }
+    
+    .shoppingCart__detailsValue {
+        flex-basis: 40%;
+    }
+    
+    .shoppingCart__payment {
+    width: 90%;
+     margin: 10px auto;
+    }
+    
+    .shoppingCart__termin {
+    width: 90%;
+    margin: 10px auto;
+    }
+    
+    .shoppingCart__paymentCards {
+        width: 80%;
+        margin: 0 auto;
+    }
+ }

@@ -132,7 +132,7 @@ class LoginMenu extends Component {
                   </form>
                   {this.state.logMessage && <h3>{this.state.logMessage}</h3> }
                   {this.state.errors.loginPass && <span>{this.messages.loginPass_incorrect}</span>}
-                  <button type="button" className="btn-close loginMenu__btn" aria-label="Close" onClick={this.props.click}></button>
+                  <button type="button" className="btn-close loginMenu__closeBtn" aria-label="Close" onClick={this.props.click}></button>
              </div>
          );
     }

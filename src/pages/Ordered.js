@@ -13,20 +13,16 @@ class Ordered extends Component {
 
         const user =users.filter(item => {if(users[activeUserIndex].login === item.login) return item
         })
-        const order = [...orders]
+        const order = [...orders] 
         user[0].bought.push(order)
         user[0].date.push(date)
-        // users[activeUserIndex].push(order)
-        // users[activeUserIndex].push(date)
- 
-
-
     }
 
     componentDidMount(){
         this.props.step(5)
         this.kupione()
         orders.splice(0,orders.length)
+        window.scrollTo(0,0)
     }
 
     render() { 

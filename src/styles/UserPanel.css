@@ -28,3 +28,22 @@
     padding: 5px;
     width: 90%;
 }
+
+@media (max-width: 576px){
+    .userPanel {
+        width: 100%;
+    }
+
+    .userPanel__input {
+        width: 100%;
+    }
+    .userPanel__user {
+        flex-basis: 90%;
+        margin: 0 auto;
+    }
+    
+    .userPanel__adress {
+        flex-basis: 90%;
+        margin: 0 auto;
+    }
+ }

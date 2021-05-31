@@ -58,3 +58,12 @@
 .summary_flex.summary__text--border {
     border-color: black;
 }
+
+@media (max-width: 576px){
+    .summary__wrap {
+        width: 97%;
+        padding: 3px;
+        display: flex;
+        flex-direction: column;
+    }
+ }

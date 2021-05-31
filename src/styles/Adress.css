@@ -34,3 +34,19 @@
     border-bottom: 3px solid grey
 }
 
+@media (max-width: 576px){   
+    .checkoutMenu__adressElement {
+        flex-basis: 100%;
+        min-height: 15vh;
+        margin: 5px;
+        padding: 10px;
+    }
+    
+    .checkoutMenu__buttonDiv {
+        flex-basis: 100%;
+    }
+    
+    .checkoutMenu__adressTitle {
+        border-bottom: 2px solid grey
+    }
+}

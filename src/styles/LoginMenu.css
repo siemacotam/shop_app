@@ -3,7 +3,7 @@
     top: 8vh;
     left: 5%;
     right: 5%;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,1);
     z-index: 3;
     min-height: 10vh;
     border: 3px solid black;
@@ -40,10 +40,22 @@
 }
 
 @media (max-width: 576px){
-    .wrapper {
-        font-size: 7px;
+    .loginMenu {
+        flex-direction: column;
     }
-    .wrapper h1 {
-        font-size: 15px;
+    
+    .loginMenu__form {
+        flex-direction: column;
+    }
+    
+    .loginMenu span {
+        margin: 0 auto;
+    }
+    
+    .loginMenu__closeBtn {
+        margin: 10px;
+        position: absolute;
+        top: 0;
+        right:0;
     }
   }

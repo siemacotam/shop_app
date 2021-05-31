@@ -232,7 +232,7 @@ class Login extends Component {
     render() { 
         return ( 
            <div className="checkoutMenu">
-                <div className='checkoutMenu__logPanel'>
+                <div className={this.state.click? 'checkoutMenu__logPanel hide' : 'checkoutMenu__logPanel'}>
                 { this.props.isLoggedIn? 
                 <div>
                   <h4>Witaj {this.props.activeUser.name}</h4>
@@ -244,55 +244,55 @@ class Login extends Component {
                         </div>}
                         {this.props.isClicked ? <LoginMenu  user={this.props.user} logged ={this.props.logged} click={this.props.handleClick}/> : null}
                 </div>
-                <div className="checkoutMenu__newUserPanel">
+                <div className={this.props.isLoggedIn? "checkoutMenu__newUserPanel hide" : "checkoutMenu__newUserPanel"}>
                     <div className={this.state.click ? "checkoutMenu__head" : null}>
                     <p className='checkoutMenu__title'>Jestes nowy ?</p>
                     <button disabled ={this.props.isLoggedIn} onClick={this.handleRegisterClick} className=" btn btn-primary">zarejestruj się</button>
                     </div>
                     <div className={this.state.click ? "checkoutMenu__register" : "checkoutMenu__register hide"}>
                         <form className="checkoutMenu__form" onSubmit={this.handleSubmit}>
-                            <label htmlFor="name" className="checkoutMenu__label">name 
+                            <label htmlFor="name" className="checkoutMenu__label"><p className='checkoutMenu__info'>name</p>
                                 <input type="text" className="checkoutMenu__input input" id='name' name='name' value={this.state.name} placeholder='name' onChange={this.handleChange}/><br/>
                                 {this.state.errors.name && <span>{this.messages.name_incorrect}</span>}
                             </label>
-                            <label htmlFor="surname" className="checkoutMenu__label">surname 
+                            <label htmlFor="surname" className="checkoutMenu__label"><p className='checkoutMenu__info'>surname</p> 
                                 <input type="text" className="checkoutMenu__input input" id='surname' name='surname' value={this.state.surname} placeholder='surname' onChange={this.handleChange}/><br/>
                                 {this.state.errors.surname && <span>{this.messages.surname_incorrect}</span>}
                             </label>
-                            <label htmlFor="login" className="checkoutMenu__label">Login 
+                            <label htmlFor="login" className="checkoutMenu__label"><p className='checkoutMenu__info'>login</p>
                                 <input type="text" className="checkoutMenu__input input" id='login' name='login' value={this.state.login} placeholder='login' onChange={this.handleChange}/><br/>
                                 {this.state.errors.login && <span>{this.messages.login_incorrect}</span>}
                                 {this.state.errors.loginDouble && <span>{this.messages.loginDouble_incorrect}</span>}
                             </label>
-                            <label htmlFor="password" className="checkoutMenu__label">password 
+                            <label htmlFor="password" className="checkoutMenu__label"><p className='checkoutMenu__info'>password</p>
                                 <input type="password" className="checkoutMenu__input input" id='password' name='password' value={this.state.password} placeholder='password' onChange={this.handleChange}/><br/>
                                 {this.state.errors.password && <span>{this.messages.password_incorrect}</span>}
                             </label>
-                            <label htmlFor="password2" className="checkoutMenu__label">repeat password
+                            <label htmlFor="password2" className="checkoutMenu__label"><p className='checkoutMenu__info'>repeat password</p>
                                 <input type="password" className="checkoutMenu__input input" id='password2' name='password2' value={this.state.password2} placeholder='password' onChange={this.handleChange}/><br/>
                                 {this.state.errors.password2 && <span>{this.messages.password2_incorrect}</span>}
                             </label>
-                            <label htmlFor="email" className="checkoutMenu__label">email 
+                            <label htmlFor="email" className="checkoutMenu__label"><p className='checkoutMenu__info'>email</p> 
                                 <input type="email" className="checkoutMenu__input input" id='email' name='email' value={this.state.email} placeholder='email' onChange={this.handleChange}/><br/>
                                 {this.state.errors.email && <span>{this.messages.email_incorrect}</span>}
                             </label>
-                            <label htmlFor="phone" className="checkoutMenu__label">phone 
+                            <label htmlFor="phone" className="checkoutMenu__label"><p className='checkoutMenu__info'>phone</p> 
                                 <input type="number" className="checkoutMenu__input input" id='phone' name='phone' value={this.state.phone} placeholder='phone' onChange={this.handleChange}/><br/>
                                 {this.state.errors.phone && <span>{this.messages.phone_incorrect}</span>}
                             </label>
-                            <label htmlFor="adress" className="checkoutMenu__label">adress 
+                            <label htmlFor="adress" className="checkoutMenu__label"><p className='checkoutMenu__info'>adress</p> 
                                 <input type="text" className="checkoutMenu__input input" id='adress' name='adress' value={this.state.adress} placeholder='adress' onChange={this.handleChange}/><br/>
                                 {this.state.errors.adress && <span>{this.messages.adress_incorrect}</span>}
                             </label>
-                            <label htmlFor="adressNumber" className="checkoutMenu__label">adressNumber 
+                            <label htmlFor="adressNumber" className="checkoutMenu__label"><p className='checkoutMenu__info'>numer domu</p> 
                                 <input type="number" className="checkoutMenu__input input" id='adressNumber' name='adressNumber' value={this.state.adressNumber} placeholder='adressNumber' onChange={this.handleChange}/><br/>
                                 {this.state.errors.adressNumber && <span>{this.messages.adressNumber_incorrect}</span>}
                             </label>
-                            <label htmlFor="city" className="checkoutMenu__label">city 
+                            <label htmlFor="city" className="checkoutMenu__label"><p className='checkoutMenu__info'>miasto</p> 
                                 <input type="text" className="checkoutMenu__input input" id='city' name='city' value={this.state.city} placeholder='city' onChange={this.handleChange}/><br/>
                                 {this.state.errors.city && <span>{this.messages.city_incorrect}</span>}
                             </label>
-                            <label htmlFor="postCode" className="checkoutMenu__label">postCode 
+                            <label htmlFor="postCode" className="checkoutMenu__label"><p className='checkoutMenu__info'>kod pocztowy</p> 
                                 <input type="text" pattern="[0-9]{5}" title="Five digit zip code" className="checkoutMenu__input input" id='postCode' name='postCode' value={this.state.postCode} placeholder='postCode' onChange={this.handleChange}/><br/>
                                 {this.state.errors.postcode && <span>{this.messages.postcode_incorrect}</span>}
                             </label><br/>

@@ -8,6 +8,7 @@
     flex-basis: 45%;
     padding-top: 50px;
     text-align: center;
+    margin: 0 auto;
 }
 
 .about__map {
@@ -24,6 +25,7 @@
     flex-direction: column;
     width: 50%;
     text-align: center;
+    margin: 0 auto;
 }
 
 .contactForm__title {
@@ -58,4 +60,24 @@
 
 .contactForm__button {
     margin: 10px;
+}
+
+@media (max-width: 576px){
+    .contact__wrap {
+        flex-wrap: wrap;
+    }
+    
+    .about {
+        flex-basis: 90%;
+        padding-top: 20px;
+    }
+    
+    .about__map {
+        height: 100%;
+    }
+    
+    .contactForm {
+        flex-basis: 90%;
+        padding-top: 220px;
+    }
 }

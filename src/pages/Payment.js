@@ -23,6 +23,7 @@ class Payment extends Component {
 
      componentDidMount(){
         this.props.step(3)
+        window.scrollTo(0,0)
     }
      
     render() { 
@@ -61,7 +62,7 @@ class Payment extends Component {
                             <p className='payment__text'>Aktualnie staramy się zrobić jak najwięcej, aby ograniczyć osobiste kontakty. Z tego powodu, zachęcamy Cię do wybrania płatności online (bezdotykowych) za Twoje zamówienie. Jeśli jednak zdecydujesz się na płatność „za pobraniem”, prosimy o przygotowanie odliczonej kwoty dla kuriera.</p>
                          </> : null}
                 </div></div>
-                <div className='pament__summary'>
+                <div className='payment__summary'>
                     <p>przesyłka</p>  <p>10 zł</p>
                     <p>łączna kwota</p> <p>{orders.length > 0 ? (orders.map(item=>item.price)).reduce((a, b) => a + b) + 10 : 0 } zł</p>
                     <Link to='/checkout/summary'>

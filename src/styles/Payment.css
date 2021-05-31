@@ -21,3 +21,20 @@
 .payment__data {
    padding-top: 40px;
 }
+
+@media (max-width: 576px){
+    .payment__wrap {
+        flex-direction: column;
+    }
+    
+    .payment__pick {
+        flex-basis: 80%;
+        width: 100%;
+    }
+    
+    .payment__summary{
+        flex-basis: 70%;
+       margin: 0 auto;
+    }
+  
+ }

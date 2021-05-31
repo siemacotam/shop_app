@@ -29,6 +29,7 @@ class Adress extends Component {
 
      componentDidMount(){
          this.props.step(2)
+         window.scrollTo(0,0)
      }
 
 

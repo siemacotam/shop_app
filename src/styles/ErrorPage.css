@@ -22,3 +22,17 @@
 .errorPage__link:hover {
     color: blue;
 }
+
+@media (max-width: 576px){
+    .errorPage__title {
+        font-size: 30px;
+        color: red;
+    }
+    .errorPage__text {
+        font-size: 20px;
+        padding-bottom: 40px;
+    }
+    .errorPage__link {
+        font-size: 20px;
+    }
+}

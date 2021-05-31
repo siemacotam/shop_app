@@ -39,6 +39,7 @@ class UserAccount extends Component {
     state = { 
       showData: false,
       changeData: false,
+      showOrders: false,
      }
 
     getIndex = (login) => {
@@ -72,7 +73,8 @@ class UserAccount extends Component {
           {this.state.showData ? <UserPanel handleChangeClick={this.handleChangeClick} changeData={this.state.changeData} activeUser={this.props.activeUser}/> : null}
           <p className='userAccount__text text text--bold text--medium'>Twoje zamówienia ({users[userIndex].bought.length})</p>
         <div>
-          <div>
+          <button onClick ={()=> {this.setState({showOrders: !this.state.showOrders})}}> {this.state.showOrders ? 'ukryj' : 'pokaż'}</button>
+          {this.state.showOrders ? <div>
             
           <div className='userAccount__orderElement'>
             <p>numer zamówienia</p>
@@ -100,7 +102,7 @@ class UserAccount extends Component {
               <p> opłacono / w realizacji</p>
           </div>
           
-          )}</div> 
+          )}</div> : null }
         </div>
         
 
