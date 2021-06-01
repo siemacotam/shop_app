@@ -5,16 +5,20 @@
     justify-content: space-between;
     flex-wrap: wrap;
     flex-grow: 0;
+    background-color: rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 0 auto;
 }
 
 .shoppingCart__orders {
     background-color: white;
     flex-basis: 60%;
-    
+    padding: 10px;
 }
 
 .shoppingCart__summary{
     background-color: white;
+    padding: 10px;
     flex-basis: 35%;
     max-height: 40%;
     display: flex;
@@ -82,7 +86,7 @@
 }
 
 .shoppingCart__button:hover {
-    transform: scale(1.1);
+    background-color: black;
 }
 
 .shoppingCart__values {

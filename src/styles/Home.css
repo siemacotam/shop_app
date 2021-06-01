@@ -6,7 +6,7 @@
 }
 
 .bannerDiv {
-    width: 90%;
+    width: 100%;
     height: 100%;
 }
 
@@ -25,7 +25,8 @@
 .banner__info {
     position: absolute;
     color: white;
-    top: 70%;
+    /* top: 70%; */
+    min-height: 20vh;
     bottom: 5%;
     left: 50%;
     right: 10%;
@@ -61,7 +62,8 @@
 }
 
 .banner__button {
-    margin: 0 0 0 50% ;
+    position: absolute;
+    right: 10%;
 }
 
 @keyframes bannerAnimation {
@@ -80,7 +82,8 @@
     .banner__info {
         position: absolute;
         color: white;
-        top: 60%;
+        /* top: 60%; */
+        min-height: 35vh;
         bottom: 1%;
         left: 5%;
         right: 5%;

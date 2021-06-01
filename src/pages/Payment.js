@@ -40,6 +40,7 @@ class Payment extends Component {
                         </select>
                     </form>
                     <div className="payment__data">
+                    {this.state.value == "1" ? <p>Wybierz proszę metodę płatności i kliknij dalej</p> : null}
                     {this.state.value === "BLIK" ? <p>Po złożeniu zamówienia zostaniesz przekierowany na stronę Przelewy 24, gdzie będziesz mógł zlecić przelew bezpośrednio z Twojego banku. Po pomyślnej realizacji płatności zamówienie zostanie sfinalizowane.</p> : null}
                     {this.state.value === 'PayPal' ? <p>Zostaniesz przeniesiony do strony PayPal, aby dokończyć proces płatności.</p>  : null}
                     {this.state.value === 'Karta Płatnicza' ?  
@@ -67,7 +68,9 @@ class Payment extends Component {
                     <p>łączna kwota</p> <p>{orders.length > 0 ? (orders.map(item=>item.price)).reduce((a, b) => a + b) + 10 : 0 } zł</p>
                     <Link to='/checkout/summary'>
                 {/* {this.state.value === 'Karta Płatnicza' ? null : */}
-                <button disabled={this.state.value == 1} onClick={() => {this.props.step(4)}}> Dalej</button>
+                <button 
+                disabled={this.state.value == 1} 
+                onClick={() => {this.props.step(4)}}> Dalej</button>
                 {/* } */}
                 </Link></div>
             </div>

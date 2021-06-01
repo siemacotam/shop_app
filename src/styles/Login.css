@@ -4,6 +4,8 @@
 }
 
 .checkoutMenu {
+    background-color: rgba(0,0,0,0.1);
+    padding: 30px 0 30px 0;
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -13,6 +15,7 @@
 .checkoutMenu__stepsPanel{
     height: 10vh;
     width: 100%;
+    padding-top: 15px;
 }
 .checkoutMenu__nav{
     display: flex;

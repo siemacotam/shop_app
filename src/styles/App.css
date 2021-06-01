@@ -7,12 +7,7 @@
 
 body {
   min-height: 100vh;
-  background: rgba(0,0,0,0.1);
-  width: 100vw;
-}
-
-body {
-  background-color: rgba(0,0,0,0.2);
+  width: 100vw; 
 }
 
 .App {
@@ -20,7 +15,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0 auto;
-  width: 95%;
+  max-width: 1500px;
+  
 }
 
 .input{

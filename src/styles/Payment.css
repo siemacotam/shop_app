@@ -2,6 +2,9 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    background-color: rgba(0,0,0,0.1);
+    padding: 15px;
+    min-height: 40vh;
 }
 
 .payment__pick {

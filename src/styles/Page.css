@@ -8,7 +8,7 @@
     margin-top: 8vh;
 }
 
-.page__bg{
+/* .page__bg{
     background-image: url('../images/bg.jpg');
     opacity:0.1;
     position:absolute;
@@ -20,7 +20,7 @@
     background-size: cover;
     z-index: -1;
     background-attachment: fixed;
-}
+} */
 
 .backButton {
     width: 100%;

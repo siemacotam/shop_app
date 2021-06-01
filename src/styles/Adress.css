@@ -1,4 +1,5 @@
 .checkoutMenu__adress {
+    background-color: rgba(0,0,0,0.1);
     display: flex;
     flex-wrap: wrap;
     width: 90%;
