@@ -2,6 +2,7 @@
     text-align: center;
     padding: 15px 3px;
     width: 100%;
+    background-color: rgba(0,0,0,0.1);
 }
 
 .ordersWrap {
@@ -32,6 +33,7 @@
     justify-content: center;
     border: 1px solid white;
     border-radius: 10px;
+    margin: 10px 0;
 }
 
 .userAccount__orderElement:nth-of-type(1){

@@ -5,12 +5,26 @@ footer {
     text-transform: uppercase;
     text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.footer__text {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.footer__container{
+    display: flex;
+    width: 40%;
+    margin: 0 auto;
+    justify-content: space-around;
 }
 
 @media (max-width: 576px){
    footer {
-       font-size: 10px;
+       font-size: 8px;
+       height: 8vh;
    }
 }

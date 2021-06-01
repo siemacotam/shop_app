@@ -1,0 +1,9 @@
+.paymentMethod {
+    text-align: center;
+    background-color: white;
+}
+
+.paymentMethod__title {
+    margin: 20px;
+    background-color: grey;
+}

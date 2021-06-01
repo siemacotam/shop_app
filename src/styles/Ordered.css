@@ -1,0 +1,9 @@
+.orderedText {
+    text-align: center;
+    padding: 50px;
+    background-color: grey;
+}
+
+.orderedText a {
+    padding: 10px;
+}

@@ -33,6 +33,10 @@ a {
   text-decoration: none;
   text-transform: uppercase;
 }
+a:hover {
+  text-decoration: none;
+  color: white;
+}
 
 button {
   background-color: black;

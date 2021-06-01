@@ -1,5 +1,7 @@
 .userPanel {
     width: 100%;
+    background-color: white;
+    padding: 20px 0;
 }
 
 .userPanel__form {

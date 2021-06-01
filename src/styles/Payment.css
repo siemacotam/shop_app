@@ -13,6 +13,9 @@
 
 .payment__summary{
     flex-basis: 30%;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 .payment__select {
@@ -23,6 +26,10 @@
 
 .payment__data {
    padding-top: 40px;
+}
+
+.payment__button {
+    width: 100%;
 }
 
 @media (max-width: 576px){

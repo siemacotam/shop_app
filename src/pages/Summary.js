@@ -63,7 +63,7 @@ class Summary extends Component {
                <div className="summary__order">
                    <p className='summary__text summary__text--bold summary__text--border' >zamówienie</p>
                    <div>
-                       <ul>
+                       <ul className='summary__list'>
                            {orderList}
                        </ul>
                    </div>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {orders} from '../pages/ShoppingCart'
 import {users} from '../pages/UserAccount'
 import {activeUserIndex} from '../pages/LoginMenu'
+import '../styles/Ordered.css'
+import {Link} from 'react-router-dom'
 
 class Ordered extends Component {
     state = {  }
@@ -27,8 +29,12 @@ class Ordered extends Component {
 
     render() { 
         return ( 
-            <div>
-            zamówienie zostało zrealizowane. aby zobaczyć szczegóły sprawdź zakładkę moje konto
+            <div className='orderedText'>
+            <p> zamówienie zostało zrealizowane. aby zobaczyć szczegóły sprawdź zakładkę moje konto</p>
+            <Link to ={'/user'}>Przejdź do mojego konta</Link>
+            <Link to ={'/categories'}>Kontynuuj zakupy</Link>
+            <Link to={'/blog'}>Przejdź do bloga</Link>
+
             </div>
          );
     }

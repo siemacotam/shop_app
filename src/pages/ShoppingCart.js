@@ -45,7 +45,7 @@ class ShoppingCart extends Component {
 
         const orderList = this.state.orderItems.map(item => 
             <li className='orderElement' key={item.name}>
-                <div className='orderElement__imgWrap' ><img className='orderElement__img' src={item.img} alt=""/></div>
+                <div className='orderElement__imgWrap' ><img className='orderElement__img' src={item.img} alt="foto"/></div>
                 <p className='orderElement__name orderElement__text' >{item.name}</p>
                 <p className='orderElement__number orderElement__text' >ilość : {item.amount}</p>
                 <p className='orderElement__price orderElement__text' >{item.price * item.amount} zł</p>
